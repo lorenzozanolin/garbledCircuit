@@ -63,8 +63,16 @@ def askForInput(party):
     Args:
         party: a for Alice, b for Bob
         
+    Raise:
+        exception if the sum is higher than 
+        
     Returns:
         The set that user inserts.
     """
     user = "Alice" if party == "a" else "Bob"
-    return list(map(int, input(f"Enter the list of integers of {user}'s set: ").strip().split(' ')))
+    numbers = list(map(int, input(f"Enter the list of integers of {user}'s set: ").strip().split(' ')))
+    
+    if(sum(numbers)>255):
+        raise Exception("sum of the numbers is too high, you must enter numbers whose sum is between 0-255")
+    
+    return numbers

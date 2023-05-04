@@ -75,10 +75,21 @@ class Alice(YaoGarbler):
             self.print(circuit) #print the circuit and obtain the result
             res = verifyOperation(self.result)   #verify the result
             if res == 1:
-                print(f"\nThe sum has been done correctly, result is {self.result}.")
+                msg = f"\nThe sum has been done correctly, result is {self.result}."
             else:
-                print(f"\nAn error occured during MPC calculation, however the obtained result is {self.result}, which is not correct.")
+                msg = f"\nAn error occured during MPC calculation, however the obtained result is {self.result}, which is not correct."
+            print(msg)  #this message, containing the result must be sent to Bob
+            self.sendResultToBob(msg)
 
+    def sendResultToBob(self,msg):
+        """Sends the result to Bob
+
+        Args:
+            msg: The message that must be sent.
+        """
+        self.socket.send(msg) 
+        #print("Message sent to Bob")    #only for debugging
+        
 
     def print(self, entry):
         """Print circuit evaluation for all Bob and Alice inputs.
@@ -106,12 +117,6 @@ class Alice(YaoGarbler):
                                     pbits[a_wires[i]] ^ bits_a[i])
 
         print(f"\n======== {circuit['id']} ========\n")
-        #print("Garbled gate sent to Bob: \n"+str(entry["garbled_tables"])+"\n")
-        
-        #print(f"\nMessage from A sent to B.\nThe content is")  -- ONLY FOR UNDERSTANDING
-        #self._print_tables(entry)
-        #for key in a_inputs:
-        #    print(key, ' : ', a_inputs[key])
         
         # Send Alice's encrypted inputs and keys to Bob
         result = self.ot.get_result(a_inputs, b_keys)
@@ -156,7 +161,9 @@ class Bob:
                 self.socket.send(True)
                 self.set = askForInput("b") # Ask for input, via console
                 saveSet(self.set,"b")   #save the set in a file
-                self.send_evaluation(entry)
+                self.send_evaluation(entry) #send evalution using OT
+                self.printResult() #print the final result, received from Alice
+                break   #bob does only a single run, used to avoid socket problems
         except KeyboardInterrupt:
             logging.info("Stop listening")
 
@@ -189,6 +196,12 @@ class Bob:
         # Evaluate and send result to Alice
         self.ot.send_result(circuit, garbled_tables, pbits_out,
                             b_inputs_clear)
+    
+    def printResult(self):
+        """function that permits Bob to print the computed result, it waits until Alice sends the final result to him and then print it out
+        
+        """
+        print(self.socket.receive())
 
 
 class LocalTest(YaoGarbler):
