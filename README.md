@@ -23,12 +23,34 @@ Full adder is used to sum a generic digit in the number, ranging from position 1
 
 Alice and Bob have two sets of numbers (given by the user), they compute the sum of this set on their own. Then they execute the secure sum of their
 set's sum using Yao's protocol.
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. The final sum has 9 bit representation, thus the maximum result that we can obtain is 510.
 
+## Project structure
 
+The structure of the src folder is the following:
 
+-   `MAKEFILE`: contain the commands to be executed.
+
+-   `circuit/add.json`: contains the circuit of the 8-bit sum.
+
+-   `sets/alice.txt`: Alice's input. User insert the input via terminal, then program saves it in this file
+
+-   `sets/bob.txt`: Bob's input.  User insert the input via terminal, then program saves it in this file
+
+-   `code/yao.py`: contains the library[^fn1].
+
+-   `code/main.py`: contains the main logic of the script.
+
+-   `code/util.py`: contains some useful functions used in main.
+
+-   `code/requirements.py`: contains functions requested by the project.
+
+-   `code/ot.py`: contains functions used to implement OT.
 
 
 [comment]: <> (Citations)
 
+[^fn1]: [Roq21] Olivier Roques. Garbled circuit. [Accessed May-2023]. 2021.
+
 [^fn3]: [Wik21b] Wikipedia contributors. Secure two-party computation — Wikipedia,
-The Free Encyclopedia. [Online; accessed 20-January-2022]. 2021.
+The Free Encyclopedia. [Online; accessed May-2023]. 2021.
