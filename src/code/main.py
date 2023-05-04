@@ -198,7 +198,7 @@ class Bob:
                             b_inputs_clear)
     
     def printResult(self):
-        """function that permits Bob to print the computed result, it waits until Alice sends the final result to him and then print it out
+        """Function that permits Bob to print the computed result, it waits until Alice sends the final result to him and then print it out
         
         """
         print(self.socket.receive())
