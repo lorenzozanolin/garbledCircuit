@@ -29,7 +29,7 @@ Since we are using 8 bit to represent the sum of each set, it immediatly follows
 
 The structure of the src folder is the following:
 
--   `MAKEFILE`: contain the commands to be executed.
+-   `MAKEFILE`: contains the commands to be executed.
 
 -   `circuit/add.json`: contains the circuit of the 8-bit sum.
 
@@ -46,6 +46,23 @@ The structure of the src folder is the following:
 -   `code/requirements.py`: contains functions requested by the project.
 
 -   `code/ot.py`: contains functions used to implement OT.
+
+## Usage
+
+You need to run the program using two different actors, say Alice and Bob. First, open two separate shells windows and execute `src/Makefile`.
+
+```
+cd src/  
+make parties
+
+NOTE: parties can be "alice" or "bob"
+```
+
+Now, for each party, you must enter the set of integers involved in the sum.
+
+| <img src="src/images/tutorial.gif" width="2000"> |
+|:--:|
+| <b>Example of the usage</b>|
 
 
 [comment]: <> (Citations)
