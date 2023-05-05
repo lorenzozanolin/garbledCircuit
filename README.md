@@ -60,7 +60,7 @@ NOTE: parties can be "alice" or "bob"
 
 Now, for each party, you must enter the set of integers involved in the sum.
 
-| <img src="src/images/tutorial.gif" width="2000"> |
+| <img src="src/images/tutorial.gif"> |
 |:--:|
 | <b>Example of the usage</b>|
 
