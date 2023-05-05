@@ -58,7 +58,7 @@ make parties
 NOTE: parties can be "alice" or "bob"
 ```
 
-Now, for each party, you must enter the set of integers involved in the sum.
+Now, for each party, you must enter the set of integers involved in the sum. Cardinality of the sets is unbounded; keep in mind that the sum of each set must be smaller than 256.
 
 | <img src="src/images/tutorial.gif"> |
 |:--:|
