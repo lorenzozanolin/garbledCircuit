@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  10 MAY 2023 15:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  10 MAY 2023 16:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -196,9 +196,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
 \Hy@SectionHShift=\skip49
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/dirtree/dirtree.sty
+Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
+
+(/usr/local/texlive/2022/texmf-dist/tex/generic/dirtree/dirtree.tex
+`dirtree' v0.32, 2012/12/11 (jcc)
+\DT@offset=\dimen153
+\DT@width=\dimen154
+\DT@sep=\dimen155
+\DT@all=\dimen156
+\DT@rulewidth=\dimen157
+\DT@dotwidth=\dimen158
+\DTbaselineskip=\dimen159
+\DT@counti=\count272
+\DT@countii=\count273
+\DT@countiii=\count274
+\DT@countiv=\count275
+\DT@indent=\dimen160
+\DT@parskip=\dimen161
+\DT@baselineskip=\dimen162
+)
+File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
+)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count272
+\c@AlgoLine=\count276
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
@@ -207,7 +229,7 @@ Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count273
+\c@checkoddpage=\count277
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
@@ -223,12 +245,12 @@ Package: relsize 2013/03/29 ver 4.1
 \skiplength=\skip56
 \algomargin=\skip57
 \skipalgocfslide=\skip58
-\algowidth=\dimen153
-\inoutsize=\dimen154
-\inoutindent=\dimen155
-\interspacetitleruled=\dimen156
-\interspacealgoruled=\dimen157
-\interspacetitleboxruled=\dimen158
+\algowidth=\dimen163
+\inoutsize=\dimen164
+\inoutindent=\dimen165
+\interspacetitleruled=\dimen166
+\interspacealgoruled=\dimen167
+\interspacetitleboxruled=\dimen168
 \algocf@ruledwidth=\skip59
 \algocf@inoutbox=\box50
 \algocf@inputbox=\box51
@@ -245,51 +267,51 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip66
 \algotitleheightruledefault=\skip67
 \algotitleheightrule=\skip68
-\c@algocfline=\count274
-\c@algocfproc=\count275
-\c@algocf=\count276
+\c@algocfline=\count278
+\c@algocfproc=\count279
+\c@algocf=\count280
 \algocf@algoframe=\box56
 \algocf@algobox=\box57
 )
 (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count277
+\l__color_backend_stack_int=\count281
 \l__pdf_internal_box=\box58
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
-\scratchdimen=\dimen159
+\scratchcounter=\count282
+\scratchdimen=\dimen169
 \scratchbox=\box59
-\nofMPsegments=\count279
-\nofMParguments=\count280
+\nofMPsegments=\count283
+\nofMParguments=\count284
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count281
-\MPscratchDim=\dimen160
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
+\MPscratchCnt=\count285
+\MPscratchDim=\dimen170
+\MPnumerator=\count286
+\makeMPintoPDFobject=\count287
 \everyMPtoPDFconversion=\toks19
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -334,7 +356,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 17.
+Package hyperref Info: Link coloring OFF on input line 19.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -345,76 +367,100 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count284
+\c@section@level=\count288
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 19.
+LaTeX Info: Redefining \pageref on input line 19.
+LaTeX Info: Redefining \nameref on input line 19.
  (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 19.
+(Font)              <14.4> on input line 21.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 19.
-<../src/images/Half_adder.png, id=20, 338.26375pt x 208.78pt>
+(Font)              <7> on input line 21.
+<../src/images/Half_adder.png, id=24, 338.26375pt x 208.78pt>
 File: ../src/images/Half_adder.png Graphic file (type png)
 <use ../src/images/Half_adder.png>
-Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 33.
+Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 35.
 (pdftex.def)             Requested size: 149.04039pt x 91.99089pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 35.
+(Font)              <12> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 35.
+(Font)              <8> on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 35.
-<../src/images/Full-adder.png, id=22, 549.05125pt x 346.29375pt>
+(Font)              <6> on input line 37.
+<../src/images/Full-adder.png, id=26, 549.05125pt x 346.29375pt>
 File: ../src/images/Full-adder.png Graphic file (type png)
 <use ../src/images/Full-adder.png>
-Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 39.
+Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 41.
 (pdftex.def)             Requested size: 170.33325pt x 107.4292pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 45.
+(Font)              <5> on input line 47.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 49.
+               Default added (so using `tbp') on input line 51.
 
-<../src/images/Circuit.png, id=27, 2569.6pt x 856.19875pt>
+<../src/images/Circuit.png, id=33, 2569.6pt x 856.19875pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
-Package pdftex.def Info: ../src/images/Circuit.png  used on input line 51.
+Package pdftex.def Info: ../src/images/Circuit.png  used on input line 53.
 (pdftex.def)             Requested size: 443.57848pt x 147.79895pt.
-(./main.bbl [1
+[1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../src/
-images/Half_adder.png> <../src/images/Full-adder.png>]) [2 <../src/images/Circu
-it.png>] (./main.aux)
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 82EDC39D6843B3C69A13713269449F65;426.
- ) 
+images/Half_adder.png> <../src/images/Full-adder.png>]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.92 }
+      
+? X
+ 
 Here is how much of TeX's memory you used:
- 9675 strings out of 478268
- 154657 string characters out of 5846347
- 462931 words of memory out of 5000000
- 27769 multiletter control sequences out of 15000+600000
- 474804 words of font info for 46 fonts, out of 8000000 for 9000
+ 9788 strings out of 478268
+ 156429 string characters out of 5846347
+ 464861 words of memory out of 5000000
+ 27880 multiletter control sequences out of 15000+600000
+ 475448 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,63p,426b,439s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
-r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loc
-al/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
-texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/t
-exlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (2 pages, 148512 bytes).
+ 60i,8n,63p,426b,321s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{figure.3} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.mpc} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{cite.yao} has been referenced but does not exist, r
+eplaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsubsection.1.2.1} has been referenced but does n
+ot exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{subsection.1.2} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
+usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/
+local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/lo
+cal/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
+/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
+xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
+live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
+ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (1 page, 131112 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
- 40 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
+ 12 named destinations out of 1000 (max. 500000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,12 +1,5 @@
 # Fdb version 3
-["bibtex main"] 1683726953 "main.aux" "main.bbl" "main" 1683726953
-  "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1683726953 1692 b7990334c99bc5a557a06eba6092b080 "pdflatex"
-  "thud.bib" 1683724399 578 176e4192ad0c12d8210bc7da034a663b ""
-  (generated)
-  "main.bbl"
-  "main.blg"
-["pdflatex"] 1683726953 "main.tex" "main.pdf" "main" 1683726953
+["pdflatex"] 1683728637 "main.tex" "main.pdf" "main" 1683728637
   "../src/images/Circuit.png" 1683726244 21947 968cb78be24f41b502052bbdc93a8928 ""
   "../src/images/Full-adder.png" 1683215311 54023 52b8ed45e43f16b41b889992331d6050 ""
   "../src/images/Half_adder.png" 1683215365 24413 32b308f0d96590b66a4511fa929b094c ""
@@ -25,6 +18,8 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
@@ -32,11 +27,14 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1248133631 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb" 1215737283 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/bitset/bitset.sty" 1576016050 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/dirtree/dirtree.sty" 1355443861 1883 4aee9c0e00b4a0c2729c07aa1ea41bad ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/dirtree/dirtree.tex" 1355443861 5890 e9acda8da77544e04e1e6041a77a14c7 ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/etexcmds/etexcmds.sty" 1576625273 7734 b98cbb34c81f667027c1e3ebdbfce34b ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty" 1576625223 8371 9d55b8bd010bc717624922fb3477d92e ""
   "/usr/local/texlive/2022/texmf-dist/tex/generic/iftex/iftex.sty" 1644112042 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
@@ -85,10 +83,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1655737347 2826443 f0239110e117b9c997e741837a19f9cb ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "main.aux" 1683726953 1692 b7990334c99bc5a557a06eba6092b080 "pdflatex"
-  "main.bbl" 1683726953 412 968a2f4bc0d190db406e90d544914619 "bibtex main"
-  "main.out" 1683726953 426 82edc39d6843b3c69a13713269449f65 "pdflatex"
-  "main.tex" 1683726950 2689 5d9dba8552b66032ed18eb5caa71fe7a ""
+  "main.aux" 1683728627 1826 c978cbddb905d8b943a26b76b7e5e28c "pdflatex"
+  "main.out" 1683728627 581 b7a701b131f9ff6bc6fe02605ac6322d "pdflatex"
+  "main.tex" 1683728635 3429 bfa43d375c9a1bc3f7eaa31abbcdfad1 ""
   (generated)
   "main.aux"
   "main.log"

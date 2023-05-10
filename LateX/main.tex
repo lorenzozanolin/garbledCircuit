@@ -2,6 +2,8 @@
 \usepackage{graphicx} % for including figure 
 \usepackage{geometry} % geometry package for mentioning margin length
 \usepackage{hyperref}
+\usepackage{dirtree}
+\usepackage{url}
 \geometry{margin=3cm} %for setting margin; DON'T CHANGE THIS
 \bibliographystyle{plain}
 \usepackage[boxed]{algorithm2e} % the boxed option keeps the algorithm in a box in the pdf.
@@ -41,8 +43,8 @@ We will present briefly the 8-bit sum circuit. There are two basic components in
     \end{minipage}
 \end{figure}
 
-\footnote{\ref{half} was taken over https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg\\ 
-\ref{full} was taken over https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg}
+\footnote{\ref{half} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg}\\ 
+\ref{full} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg}.}
 
 We then proceede creating the circuit by wiring 7 full adders and an half adder together, as represented in Figure \ref{circuit}.
 
@@ -53,9 +55,41 @@ We then proceede creating the circuit by wiring 7 full adders and an half adder 
 \end{figure}
 
 \subsection{Implementation}
+The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}.
+\subsubsection{Project structure}
+The project is structured as follows:
 
 
-
+\dirtree{%
+.1 src/..
+.2 .DS_Store.
+.2 Makefile.
+.2 passaggi.txt.
+.2 images.
+.3 .DS_Store.
+.3 8-bit_full_adder.png.
+.3 Circuit.png.
+.3 Half_adder.png.
+.3 Full-adder.png.
+.3 tutorial.gif.
+.2 circuits.
+.3 .DS_Store.
+.3 add.json.
+.2 code.
+.3 util.py.
+.3 yao.py.
+.3 ot.py.
+.3 requirements.py.
+.3 main.py.
+.3 __pycache__.
+.4 yao.cpython-39.pyc.
+.4 ot.cpython-39.pyc.
+.4 requirements.cpython-39.pyc.
+.4 util.cpython-39.pyc.
+.2 sets.
+.3 alice.txt.
+.3 bob.txt.
+}
 
 
 \bibliography{thud}
