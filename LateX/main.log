@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  10 MAY 2023 17:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  10 MAY 2023 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -401,18 +401,13 @@ Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 56.
 (pdftex.def)             Requested size: 170.33325pt x 107.4292pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 62.
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 66.
-
 <../src/images/Circuit.png, id=57, 2569.6pt x 856.19875pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
 Package pdftex.def Info: ../src/images/Circuit.png  used on input line 68.
 (pdftex.def)             Requested size: 443.57848pt x 147.79895pt.
-[2 <../src/images/Half_adder.png> <../src/images/Full-adder.png> <../src/images
-/Circuit.png>]
+ [2 <../src/images/Half_adder.png> <../src/images/Full-adder.png> <../src/image
+s/Circuit.png>]
 Overfull \hbox (65.51236pt too wide) in paragraph at lines 103--103
 []|\OT1/cmtt/m/n/12 images   []| 
  []
@@ -456,7 +451,7 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (3 pages, 183909 bytes).
+Output written on main.pdf (3 pages, 183937 bytes).
 PDF statistics:
  136 PDF objects out of 1000 (max. 8388607)
  101 compressed objects within 2 object streams
