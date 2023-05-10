@@ -1,6 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{graphicx} % for including figure 
 \usepackage{geometry} % geometry package for mentioning margin length
+\usepackage{hyperref}
 \geometry{margin=3cm} %for setting margin; DON'T CHANGE THIS
 \bibliographystyle{plain}
 \usepackage[boxed]{algorithm2e} % the boxed option keeps the algorithm in a box in the pdf.
@@ -16,40 +17,46 @@
 \begin{document}
 \maketitle
 
-\section{First section}
-The aim of this project is the study of Yao's protocol \cite{yao} and an useful application of it.\\ More precisely, we will implement Secure multi-party computation; this field has the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private \cite{mpc}. In this project, the function we decided to implement is the \textit{8 bit sum}.
+\section{Introduction}
+The aim of this project is the study of Yao's protocol \cite{yao} and an useful application of it. More precisely, we will implement Secure multi-party computation; this field has the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private \cite{mpc}. In this project, the function we decided to implement is the \textit{8 bit sum}.
+
+\subsection{Description of the circuit}
+We will present briefly the 8-bit sum circuit. There are two basic components in this construction:
+\begin{itemize}
+    \item \textit{\hyperref[half]{Half Adder}}: used to sum the right-most digit;
+    \item \textit{\hyperref[full]{Full adder}}:  used to sum a generic digit in the number, ranging from position 1 to 8. It receives in input also carry of the previous sum.
+\end{itemize}
+
+\begin{figure}[!htb]
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=.7\linewidth]{../src/images/Half_adder.png}
+        \caption{Half Adder}\label{half}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=.8\linewidth]{../src/images/Full-adder.png}
+        \caption{Full Adder}\label{full}
+    \end{minipage}
+\end{figure}
+
+\footnote{\ref{half} was taken over https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg\\ 
+\ref{full} was taken over https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg}
+
+We then proceede creating the circuit by wiring 7 full adders and an half adder together, as represented in Figure \ref{circuit}.
+
+\begin{figure}[]
+    \centering
+    \includegraphics[width=1\linewidth]{../src/images/Circuit.png}
+    \caption{Full Adder}\label{circuit}
+\end{figure}
+
+\subsection{Implementation}
 
 
-\section{Second section}
-
-This is the content of the second section. This section contains the algorithms of my implementation
 
 
-\begin{algorithm}[H]
-\SetAlgoLined
-\KwData{this text}
-  \KwResult{how to write algorithm with \LaTeX2e }
- initialization\;
- \While{While condition}{
-  instructions\;
-  \eIf{condition}{
-   instructions1\;
-   instructions2\;
-   }{
-   instructions3\;
-  }
-}
-\For{$i\gets0$ \KwTo $8$ \KwBy $2$}{
-    Do something
-    }
- \caption{How to write algorithms}\label{alg:myalgoname}
-\end{algorithm}
-
-
-
-\subsection{A subsection}
-A subsection is created to organise some information togather within a section. This includes the example of how to include
-a figure. This shows how we refer to algorithm \ref{alg:myalgoname}.
 
 \bibliography{thud}
  
