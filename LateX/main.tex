@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % for including figure 
+\usepackage{geometry} % geometry package for mentioning margin length
+\geometry{margin=3cm} %for setting margin; DON'T CHANGE THIS
+\bibliographystyle{plain}
+\usepackage[boxed]{algorithm2e} % the boxed option keeps the algorithm in a box in the pdf.
+                                % You can also use the option ruled or algoruled for a different output.
+                                % For more information about the algorithm2e package you can read the docuemntation 
+                                % at https://mirror.easyname.at/ctan/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
+
+\SetKw{KwBy}{by} % macro to increase the counter in for loop 'by' <quantity>  
+
+\title{Project documentation}
+\author{Lorenzo Zanolin}
+
+\begin{document}
+\maketitle
+
+\section{First section}
+The aim of this project is the study of Yao's protocol \cite{yao} and an useful application of it.\\ More precisely, we will implement Secure multi-party computation; this field has the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private \cite{mpc}. In this project, the function we decided to implement is the \textit{8 bit sum}.
+
+
+\section{Second section}
+
+This is the content of the second section. This section contains the algorithms of my implementation
+
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\KwData{this text}
+  \KwResult{how to write algorithm with \LaTeX2e }
+ initialization\;
+ \While{While condition}{
+  instructions\;
+  \eIf{condition}{
+   instructions1\;
+   instructions2\;
+   }{
+   instructions3\;
+  }
+}
+\For{$i\gets0$ \KwTo $8$ \KwBy $2$}{
+    Do something
+    }
+ \caption{How to write algorithms}\label{alg:myalgoname}
+\end{algorithm}
+
+
+
+\subsection{A subsection}
+A subsection is created to organise some information togather within a section. This includes the example of how to include
+a figure. This shows how we refer to algorithm \ref{alg:myalgoname}.
+
+\bibliography{thud}
+ 
+
+\end{document}
