@@ -1,5 +1,10 @@
 \begin{thebibliography}{1}
 
+\bibitem{ot}
+Moni Naor and Benny Pinkas.
+\newblock Computationally secure oblivious transfer.
+\newblock {\em Journal of Cryptology}, 18, 2005.
+
 \bibitem{mpc}
 {Wikipedia contributors}.
 \newblock Secure multi-party computation --- {Wikipedia}{,} the free

@@ -22,7 +22,22 @@
 \section{Introduction}
 The aim of this project is the study of Yao's protocol \cite{yao} and an useful application of it. More precisely, we will implement Secure multi-party computation; this field has the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private \cite{mpc}. In this project, the function we decided to implement is the \textit{8 bit sum}.
 
-\subsection{Description of the circuit}
+\section{Analysis}
+We can focus on the sum computed by two parties, say Alice and Bob. The goal is to use \textit{MPC} to calulate the result while avoiding each member to know the others values; to do that we need an external component, called \textit{OT}.\\ This protocol allows two parties, Alice who
+knows x and Bob who knows y, to compute jointly the value of $f(x, y)$ in a way that does not reveal to each side more information than can be deduced from $f(x, y)$ \cite{ot}. As already written, $f$ is the 8-bit sum.\\ Both Alice and Bob have a set of integers and need to compute the sum of everything.
+Two new roles are introduced: Alice is the \textit{garbler} and has the responsibility of creating the garbled circuit, while Bob is the \textit{evaluator}.
+They will behave as follows:
+\begin{enumerate}
+    \item Alice creates the garbled circuit and the tables and send them to Bob.
+    \item Alice select her set, via input.
+    \item Bob select his set, via input.
+    \item Both interact with eachoter using OT.
+    \item Bob evaluate the function result and sends it to Alice.
+    \item Alice checks the correctness of the result, and sends it to Bob (in clear).
+\end{enumerate}
+
+
+\subsection{Circuit}
 We will present briefly the 8-bit sum circuit. There are two basic components in this construction:
 \begin{itemize}
     \item \textit{\hyperref[half]{Half Adder}}: used to sum the right-most digit;
@@ -51,7 +66,7 @@ We then proceede creating the circuit by wiring 7 full adders and an half adder 
 \begin{figure}[]
     \centering
     \includegraphics[width=1\linewidth]{../src/images/Circuit.png}
-    \caption{Full Adder}\label{circuit}
+    \caption{8-bit Adder}\label{circuit}
 \end{figure}
 
 \subsection{Implementation}
@@ -72,14 +87,17 @@ The project is structured as follows:
     This directory contains the circuit used{.}
     \end{minipage}.
 .3 add.json.
-.2 code \hspace{4.5cm} \begin{minipage}[t]{10cm}
+.2 code \hspace{5cm} \begin{minipage}[t]{10cm}
     This directory contains the code used{.}
+    \end{minipage}.
 .3 util.py.
 .3 yao.py.
 .3 ot.py.
 .3 requirements.py.
 .3 main.py.
-.2 sets.
+.2 sets \hspace{5cm} \begin{minipage}[t]{10cm}
+    This directory contains the sets saved{.}
+    \end{minipage}.
 .3 alice.txt.
 .3 bob.txt.
 }
