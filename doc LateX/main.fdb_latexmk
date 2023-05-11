@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1683795203 "main.aux" "main.bbl" "main" 1683795204
+["bibtex main"] 1683797353 "main.aux" "main.bbl" "main" 1683797849
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1683795204 2980 7aa0f10fc8df344f5c33fc506960759b "pdflatex"
+  "main.aux" 1683797848 2980 a7b12a8ab69f832e8ea05b5754229a26 "pdflatex"
   "thud.bib" 1683732465 889 e9ccabcc16450a6e5d8784d47f3b3daa ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1683795204 "main.tex" "main.pdf" "main" 1683795204
+["pdflatex"] 1683797848 "main.tex" "main.pdf" "main" 1683797849
   "../src/images/Circuit.png" 1683726244 21947 968cb78be24f41b502052bbdc93a8928 ""
   "../src/images/Full-adder.png" 1683215311 54023 52b8ed45e43f16b41b889992331d6050 ""
   "../src/images/Half_adder.png" 1683215365 24413 32b308f0d96590b66a4511fa929b094c ""
@@ -28,8 +28,6 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
-  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti7.tfm" 1136768653 1492 86331993fe614793f5e7e755835c31c5 ""
-  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmti8.tfm" 1136768653 1504 1747189e0441d1c18f3ea56fafc1c480 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
@@ -104,10 +102,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1655737347 2826443 f0239110e117b9c997e741837a19f9cb ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "main.aux" 1683795204 2980 7aa0f10fc8df344f5c33fc506960759b "pdflatex"
-  "main.bbl" 1683795204 556 eaf225ba573931adf2e4ae490b5a2f32 "bibtex main"
-  "main.out" 1683795204 1053 b429588d40a82752cbcc809ab0933d73 "pdflatex"
-  "main.tex" 1683795199 8435 266f9d5042ca75c4ea7a46942d5f5d37 ""
+  "main.aux" 1683797848 2980 a7b12a8ab69f832e8ea05b5754229a26 "pdflatex"
+  "main.bbl" 1683797353 556 eaf225ba573931adf2e4ae490b5a2f32 "bibtex main"
+  "main.out" 1683797848 1053 b429588d40a82752cbcc809ab0933d73 "pdflatex"
+  "main.tex" 1683797845 7804 4e2a581f4dd6c63f275feffc78438fb6 ""
   (generated)
   "main.aux"
   "main.log"

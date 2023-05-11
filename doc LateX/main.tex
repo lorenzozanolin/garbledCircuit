@@ -119,7 +119,20 @@ We can represent the pseudocode that represents the behaviour listed before.\\
         \centering
         \caption{Alice's behaviour}\label{alice:algo}
         \begin{algorithmic}[1]
-            \State \text{send(circuit)} 
+            \State $send(circuit)$  
+            \State $aliceSet \gets askForInput()$ 
+            \State $saveSet(aliceSet)$ 
+            \State
+            \State $aliceValue \gets sum(aliceSet)$
+            \State $aliceE \gets encrypt(aliceValue)$
+            \State
+            \State $r \gets OT.getResult(aliceE,bKeys)$
+            \State
+            \State $result = decimal(r)$
+            \State $msg \gets verifyOperation(result)$ 
+            \State $sendToBob(msg)$
+            \State $printResult(result,msg)$
+
         \end{algorithmic}
     \end{algorithm}
     \end{minipage}
@@ -129,29 +142,17 @@ We can represent the pseudocode that represents the behaviour listed before.\\
         \centering
         \caption{Bob's behaviour}\label{bob:algo}
         \begin{algorithmic}[1]
-            \State \text{dataProcessing (dataset)} 
-            \State $\textit{unitToDrop} \gets \text{25\%}$
-            \State \text{text}
-            \State \text{text}
-            \Repeat
-            \State \text{/*text*/}
-            \For{$i\gets 1, rows$}
-            \State $\text{text}$ 
-            \State $\text{text}$ 
-            \State $\text{text}$ 
-            \State \text{text}
-            \State $\text{text}$
-            \EndFor
-            \Until {text}
-            \State \text{text}
-            \Repeat
-            \State \text{text}
-            \For{$i\gets 1, rows$}
-            \State $\text{text}$ 
-            \State $\text{v}$ 
-            \EndFor
-            \Until {text}
-            \State \textbf{Return}  \text{text, text}
+            \State $receive(circuit)$  
+            \State $bobSet \gets askForInput()$ 
+            \State $saveSet(bobSet)$ 
+            \State
+            \State $bobValue \gets sum(bobSet)$
+            \State
+            \State $OT.sendResult(bobValue)$
+            \State
+            \State $msg \gets receive()$
+            \State $printResult(msg)$
+
         \end{algorithmic}
     \end{algorithm}
     \end{minipage}
