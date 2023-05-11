@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 \usepackage{dirtree}
 \usepackage{url}
+\usepackage{listings}
 \geometry{margin=3cm} %for setting margin; DON'T CHANGE THIS
 \bibliographystyle{plain}
 \usepackage{algorithm}
@@ -67,7 +68,7 @@ We then proceede creating the circuit by wiring 7 full adders and an half adder 
     \includegraphics[width=0.95\linewidth]{../src/images/Circuit.png}
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
-\vfill
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. The final sum has 9 bit representation, thus the maximum result that we can obtain is 510.
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
@@ -162,16 +163,50 @@ We will briefly explain how to install the program and how it works. In my \hype
 \subsection{Installation}
 To run the program you need some packages:
 \begin{itemize}
-    \item ZeroMQ used in \inlinecode{util.py} to implement communication;
-    \item SymPy to use prime numbers;
-    \item AES from encryption.
+    \item \textit{ZeroMQ} used in \inlinecode{util.py} to implement communication;
+    \item \textit{SymPy} to use prime numbers;
+    \item \textit{AES} from encryption.
 \end{itemize}
-Simply run:\\
+Simply run: 
 \inlinecode{\$ pip3 install pyzmq cryptography sympy}
 \subsection{Execution}
 As already writte, there are two parties: Alice and Bob. You must run on two different terminals them. From now, for simplicity, we assume that we are positioned inside \inlinecode{/src/}.
+From Alice's Terminal, simply run \inlinecode{make alice}, while for Bob's Terminal run run \inlinecode{make bob}.\\
+Now the connection will be established and the program will ask the user to give the input set, for each party. Once done, the result will be computed and printed in each terminal.
 \subsubsection{Example}
+A practical example will follow, we will show the output of each terminal.\\
+\textbf{Alice' side}:
+\begin{lstlisting}[frame=single, basicstyle=\scriptsize]
+$ make alice
+python3 code/main.py alice   -c circuits/add.json
+Enter the list of integers of Alice's set: 1 2 3
 
+======== 8 bit adder ========
+
+Values of the computation
+
+Syntax: parties/result:  [list of bits] =   [correspective values]
+
+Alice: [8, 7, 6, 5, 4, 3, 2, 1] = 0 0 0 0 0 1 1 0
+Computed result by circuit: [53, 51, 46, 41, 36, 31, 26, 21, 17] = 0 0 0 0 1 0 1 0 1
+
+The sum has been done correctly, result is 21.
+\end{lstlisting}
+
+\textbf{Bob's side}:
+\begin{lstlisting}[frame=single, basicstyle=\scriptsize]
+$ make bob
+python3 code/main.py bob
+Enter the list of integers of Bob's set: 4 5 6
+Received 8 bit adder
+
+Syntax:  parties/result  [list of bits] = [correspective values]
+
+Bob [16, 15, 14, 13, 12, 11, 10, 9] = 0 0 0 0 1 1 1 1
+
+
+The sum has been done correctly, result is 21.
+\end{lstlisting}
 
 
 
