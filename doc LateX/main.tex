@@ -71,7 +71,7 @@ We then proceede creating the circuit by wiring 7 full adders and an half adder 
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
-There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}.\\ \\
+There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.\\ \\
 The project has the following structure:\\
 \fbox{
     \begin{minipage}{40em}
@@ -158,7 +158,16 @@ We can represent the pseudocode that represents the behaviour listed before.\\
     \end{minipage}
 
 \section{Usage}
+We will briefly explain how to install the program and how it works. In my hyperref[zanoGit]{repo} there is also a graphical visualization of the executing program. 
 \subsection{Installation}
+To run the program you need some packages:
+\begin{itemize}
+    \item ZeroMQ used in \inlinecode{util.py} to implement communication;
+    \item SymPy to use prime numbers;
+    \item AES from encryption.
+\end{itemize}
+Simply run:\\
+\inlinecode{\$ pip3 install pyzmq cryptography sympy}
 \subsection{Communication}
 \subsubsection{Example}
 
