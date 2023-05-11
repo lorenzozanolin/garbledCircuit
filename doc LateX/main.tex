@@ -6,12 +6,10 @@
 \usepackage{url}
 \geometry{margin=3cm} %for setting margin; DON'T CHANGE THIS
 \bibliographystyle{plain}
-\usepackage[boxed]{algorithm2e} % the boxed option keeps the algorithm in a box in the pdf.
-                                % You can also use the option ruled or algoruled for a different output.
-                                % For more information about the algorithm2e package you can read the docuemntation 
-                                % at https://mirror.easyname.at/ctan/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[fleqn]{amsmath}
 \newcommand{\inlinecode}{\texttt}
-\SetKw{KwBy}{by} % macro to increase the counter in for loop 'by' <quantity>  
 
 \title{Project documentation}
 \author{Lorenzo Zanolin}
@@ -27,7 +25,7 @@ We can focus on the sum computed by two parties, say Alice and Bob. The goal is 
 knows x and Bob who knows y, to compute jointly the value of $f(x, y)$ in a way that does not reveal to each side more information than can be deduced from $f(x, y)$ \cite{ot}. As already written, $f$ is the 8-bit sum.\\ Both Alice and Bob have a set of integers and need to compute the sum of everything.
 Two new roles are introduced: Alice is the \textit{garbler} and has the responsibility of creating the garbled circuit, while Bob is the \textit{evaluator}.
 They will behave as follows:
-\begin{enumerate}
+\begin{enumerate}\label{behaviour}
     \item Alice creates the garbled circuit and the tables and send them to Bob.
     \item Alice select her set, via input.
     \item Bob select his set, via input.
@@ -73,39 +71,121 @@ We then proceede creating the circuit by wiring 7 full adders and an half adder 
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
-There is also a dedicated GitHub page at \url{https://github.com/lorenzozanolin/garbledCircuit}.\\
-The project has the following structure:
-\dirtree{%
-.1 src/..
-.2 Makefile.
-.2 images \hspace{5cm} \begin{minipage}[t]{10cm}
-    This directory contains the images used{.}
-    \end{minipage}.
-.3 8-bit\_full\_adder.png.
-.3 Circuit.png.
-.3 Half\_adder.png.
-.3 Full-adder.png.
-.2 circuits \hspace{4.5cm} \begin{minipage}[t]{10cm}
-    This directory contains the circuit used{.}
-    \end{minipage}.
-.3 add.json.
-.2 code \hspace{5cm} \begin{minipage}[t]{10cm}
-    This directory contains the code used{.}
-    \end{minipage}.
-.3 util.py.
-.3 yao.py.
-.3 ot.py.
-.3 requirements.py.
-.3 main.py.
-.2 sets \hspace{5cm} \begin{minipage}[t]{10cm}
-    This directory contains the sets saved{.}
-    \end{minipage}.
-.3 alice.txt.
-.3 bob.txt.
-}
-The \textit{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.\\ Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \textit{yao.py}, more precisely in the two functions \inlinecode{encrypt(key,data), decrypt(key,data)}.
+There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}.\\ \\
+The project has the following structure:\\
+\fbox{
+    \begin{minipage}{40em}
+    \dirtree{%
+    .1 src/..
+    .2 Makefile.
+    .2 images \hspace{5cm} \begin{minipage}[t]{10cm}
+        This directory contains the images used{.}
+        \end{minipage}.
+    .3 8-bit\_full\_adder.png.
+    .3 Circuit.png.
+    .3 Half\_adder.png.
+    .3 Full-adder.png.
+    .2 circuits \hspace{4.5cm} \begin{minipage}[t]{10cm}
+        This directory contains the circuit used{.}
+        \end{minipage}.
+    .3 add.json.
+    .2 code \hspace{5cm} \begin{minipage}[t]{10cm}
+        This directory contains the code used{.}
+        \end{minipage}.
+    .3 util.py.
+    .3 yao.py.
+    .3 ot.py.
+    .3 requirements.py.
+    .3 main.py.
+    .2 sets \hspace{5cm} \begin{minipage}[t]{10cm}
+        This directory contains the sets saved{.}
+        \end{minipage}.
+    .3 alice.txt.
+    .3 bob.txt.
+    }
+    \end{minipage}
+}\\
+
+The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.
+\subsubsection{Coding}
+First thing first, we need to represent the circuit; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the other following the structure represented in Figure \ref{circuit}.\\
+We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour.
+It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file we can also find two functions \inlinecode{saveSet, readSet} used to write in two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt} the input values; this will be useful when we want to check the correctness of the computed result, using \inlinecode{verifyOperation}.\\
+Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \inlinecode{yao.py}, more precisely in the two functions \inlinecode{encrypt, decrypt}. As written in the code, we opted to prepend the IV at the cyphertext to avoid reusing the same IV for all the communications.\\
+We can represent the pseudocode that represents the behaviour listed before.\\
+
+\begin{minipage}{0.46\textwidth}
+    \begin{algorithm}[H]
+        \centering
+        \caption{Alice's behaviour}\label{alice:algo}
+        \begin{algorithmic}[1]
+            \State \text{dataProcessing (dataset)} 
+            \State $\textit{unitToDrop} \gets \text{25\%}$
+            \State \text{text}
+            \State \text{text}
+            \Repeat
+            \State \text{/*text*/}
+            \For{$i\gets 1, rows$}
+            \State $\text{text}$ 
+            \State $\text{text}$ 
+            \State $\text{text}$ 
+            \State \text{text}
+            \State $\text{text}$
+            \EndFor
+            \Until {text}
+            \State \text{text}
+            \Repeat
+            \State \text{text}
+            \For{$i\gets 1, rows$}
+            \State $\text{text}$ 
+            \State $\text{v}$ 
+            \EndFor
+            \Until {text}
+            \State \textbf{Return}  \text{text, text}
+        \end{algorithmic}
+    \end{algorithm}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.46\textwidth}
+    \begin{algorithm}[H]
+        \centering
+        \caption{Bob's behaviour}\label{bob:algo}
+        \begin{algorithmic}[1]
+            \State \text{dataProcessing (dataset)} 
+            \State $\textit{unitToDrop} \gets \text{25\%}$
+            \State \text{text}
+            \State \text{text}
+            \Repeat
+            \State \text{/*text*/}
+            \For{$i\gets 1, rows$}
+            \State $\text{text}$ 
+            \State $\text{text}$ 
+            \State $\text{text}$ 
+            \State \text{text}
+            \State $\text{text}$
+            \EndFor
+            \Until {text}
+            \State \text{text}
+            \Repeat
+            \State \text{text}
+            \For{$i\gets 1, rows$}
+            \State $\text{text}$ 
+            \State $\text{v}$ 
+            \EndFor
+            \Until {text}
+            \State \textbf{Return}  \text{text, text}
+        \end{algorithmic}
+    \end{algorithm}
+    \end{minipage}
+
+\section{Usage}
+\subsection{Installation}
+\subsection{Communication}
+\subsubsection{Example}
+
+
+
+
 
 \bibliography{thud}
- 
-
 \end{document}
