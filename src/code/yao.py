@@ -6,7 +6,7 @@ import os
 
 
 def encrypt(key, data):
-    """Encrypt a message using AES-CBC.
+    """Encrypt a message using AES-CBC. We decided to prepend the IV to the encrypted message to avoid using the same IV for each computation.
 
     Args:
         key: The encryption key.
@@ -21,9 +21,9 @@ def encrypt(key, data):
     padded_data += padder.finalize()
     cipher = Cipher(algorithms.AES(key), modes.CBC(iv))
     encrypt = cipher.encryptor()
-    ct = encrypt.update(padded_data) + encrypt.finalize()
-    ct = iv + ct
-    return ct
+    ciphertext = encrypt.update(padded_data) + encrypt.finalize()
+    ciphertext = iv + ciphertext
+    return ciphertext
 
 
 def decrypt(key, data):

@@ -118,7 +118,7 @@ class Alice(YaoGarbler):
 
         print(f"\n======== {circuit['id']} ========\n")
         
-        # Send Alice's encrypted inputs and keys to Bob
+        # Send Alice's encrypted inputs and keys to OT
         result = self.ot.get_result(a_inputs, b_keys)
 
         # Format output
