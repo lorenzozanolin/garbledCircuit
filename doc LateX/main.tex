@@ -5,12 +5,50 @@
 \usepackage{dirtree}
 \usepackage{url}
 \usepackage{listings}
+%\usepackage{bera}
+\usepackage{xcolor}
+
 \geometry{margin=3cm} %for setting margin; DON'T CHANGE THIS
 \bibliographystyle{plain}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage[fleqn]{amsmath}
 \newcommand{\inlinecode}{\texttt}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
 
 \title{Project documentation}
 \author{Lorenzo Zanolin}
@@ -108,8 +146,66 @@ The project has the following structure:\\
 }\\
 
 The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.
-\subsubsection{Coding}
-First thing first, we need to represent the circuit; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the other following the structure represented in Figure \ref{circuit}.\\
+\subsubsection{Coding part}
+First thing first, we need to represent the \textit{circuit}; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the other following the structure represented in Figure \ref{circuit}.\\* Each gate that appears in figure \ref{circuit} is represented in a single JSON line.\\*
+\clearpage
+The syntax is:\\* 
+\fbox{\inlinecode{"id" : <gateId>, "type" : "<TYPE>", "in": [<gateIdInput1>, <gateIdInput2>]}}\\
+In this case the circuit is represented as follows:
+\begin{lstlisting}[language=json,firstnumber=1]
+    {"circuits": [
+        {
+          "id": "8 bit adder",
+          "alice": [8, 7 ,6 ,5 ,4 ,3 ,2 ,1],
+          "bob": [16, 15, 14, 13, 12, 11, 10, 9],
+          "out": [53, 51, 46, 41, 36, 31, 26, 21, 17],
+          "gates": [
+            {"id": 17, "type": "XOR", "in": [1, 9]},
+            {"id": 18, "type": "AND", "in": [1, 9]},
+  
+            {"id": 19, "type": "XOR", "in": [2, 10]},
+            {"id": 20, "type": "AND", "in": [2, 10]},
+            {"id": 21, "type": "XOR", "in": [18, 19]},
+            {"id": 22, "type": "AND", "in": [18, 19]},
+            {"id": 23, "type": "OR", "in": [20, 22]},
+  
+            {"id": 24, "type": "XOR", "in": [3,11]},
+            {"id": 25, "type": "AND", "in": [3,11]},
+            {"id": 26, "type": "XOR", "in": [23,24]},
+            {"id": 27, "type": "AND", "in": [23,24]},
+            {"id": 28, "type": "OR", "in": [25,27]},
+          
+            {"id": 29, "type": "XOR", "in": [4,12]},
+            {"id": 30, "type": "AND", "in": [4,12]},
+            {"id": 31, "type": "XOR", "in": [28,29]},
+            {"id": 32, "type": "AND", "in": [28,29]},
+            {"id": 33, "type": "OR", "in": [30,32]},
+  
+            {"id": 34, "type": "XOR", "in": [5,13]},
+            {"id": 35, "type": "AND", "in": [5,13]},
+            {"id": 36, "type": "XOR", "in": [33,34]},
+            {"id": 37, "type": "AND", "in": [33,34]},
+            {"id": 38, "type": "OR", "in": [35,37]},
+  
+            {"id": 39, "type": "XOR", "in": [6,14]},
+            {"id": 40, "type": "AND", "in": [6,14]},
+            {"id": 41, "type": "XOR", "in": [38,39]},
+            {"id": 42, "type": "AND", "in": [38,39]},
+            {"id": 43, "type": "OR", "in": [40,42]},
+  
+            {"id": 44, "type": "XOR", "in": [7,15]},
+            {"id": 45, "type": "AND", "in": [7,15]},
+            {"id": 46, "type": "XOR", "in": [43,44]},
+            {"id": 47, "type": "AND", "in": [43,44]},
+            {"id": 48, "type": "OR", "in": [45,47]},
+  
+            {"id": 49, "type": "XOR", "in": [8,16]},
+            {"id": 50, "type": "AND", "in": [8,16]},
+            {"id": 51, "type": "XOR", "in": [48,49]},
+            {"id": 52, "type": "AND", "in": [48,49]},
+            {"id": 53, "type": "OR", "in": [50,52]}
+          ]}]}
+    \end{lstlisting}
 We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour.
 It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file we can also find two functions \inlinecode{saveSet, readSet} used to write in two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt} the input values; this will be useful when we want to check the correctness of the computed result, using \inlinecode{verifyOperation}.\\
 Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \inlinecode{yao.py}, more precisely in the two functions \inlinecode{encrypt, decrypt}. As written in the code, we opted to prepend the IV at the cyphertext to avoid reusing the same IV for all the communications.\\
