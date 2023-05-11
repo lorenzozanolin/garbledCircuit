@@ -10,7 +10,7 @@
                                 % You can also use the option ruled or algoruled for a different output.
                                 % For more information about the algorithm2e package you can read the docuemntation 
                                 % at https://mirror.easyname.at/ctan/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf
-
+\newcommand{\inlinecode}{\texttt}
 \SetKw{KwBy}{by} % macro to increase the counter in for loop 'by' <quantity>  
 
 \title{Project documentation}
@@ -31,12 +31,13 @@ They will behave as follows:
     \item Alice creates the garbled circuit and the tables and send them to Bob.
     \item Alice select her set, via input.
     \item Bob select his set, via input.
-    \item Both interact with eachoter using OT.
+    \item Both interact with each other using OT.
     \item Bob evaluate the function result and sends it to Alice.
     \item Alice checks the correctness of the result, and sends it to Bob (in clear).
 \end{enumerate}
 
-
+\section{Implementation}
+We will present how to implement the \textit{circuit} and how to make Alice and Bob comunicate securely.
 \subsection{Circuit}
 We will present briefly the 8-bit sum circuit. There are two basic components in this construction:
 \begin{itemize}
@@ -65,14 +66,15 @@ We then proceede creating the circuit by wiring 7 full adders and an half adder 
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=1\linewidth]{../src/images/Circuit.png}
+    \includegraphics[width=0.95\linewidth]{../src/images/Circuit.png}
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
 \vfill
-\subsection{Implementation}
-The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}.
+%\subsection{Implementation}
 \subsubsection{Project structure}
-The project is structured as follows:
+The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
+There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}.\\
+The project has the following structure:
 \dirtree{%
 .1 src/..
 .2 Makefile.
@@ -101,7 +103,7 @@ The project is structured as follows:
 .3 alice.txt.
 .3 bob.txt.
 }
-
+The \textit{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.\\ Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \textit{yao.py}, more precisely in the two functions \inlinecode{encrypt(key,data), decrypt(key,data)}.
 
 \bibliography{thud}
  
