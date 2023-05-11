@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  11 MAY 2023 11:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  11 MAY 2023 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -504,18 +504,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--116
 [3]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 120.
- (./main.bbl) [4] (./main.aux)
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 
+170.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) (./main.bbl
+[4]) [5] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: B429588D40A82752CBCC809AB0933D73;1053.
  ) 
 Here is how much of TeX's memory you used:
- 10163 strings out of 478268
- 160036 string characters out of 5846347
- 462308 words of memory out of 5000000
- 28208 multiletter control sequences out of 15000+600000
- 476800 words of font info for 55 fonts, out of 8000000 for 9000
+ 10181 strings out of 478268
+ 160568 string characters out of 5846347
+ 462362 words of memory out of 5000000
+ 28221 multiletter control sequences out of 15000+600000
+ 477097 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,63p,505b,356s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,8n,63p,505b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -528,11 +533,12 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
-ve/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (4 pages, 207237 bytes).
+ve/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive
+/2022/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (5 pages, 211134 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
- 31 named destinations out of 1000 (max. 500000)
+ 183 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 
