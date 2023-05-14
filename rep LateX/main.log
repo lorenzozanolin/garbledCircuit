@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  14 MAY 2023 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  14 MAY 2023 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,11 +564,11 @@ LaTeX Warning: Reference `sec:Time' on page 5-1 undefined on input line 94.
 
 LaTeX Warning: Reference `sec:Marking' on page 5-1 undefined on input line 94.
 
-<../src/images/steps.png, id=4, 614.295pt x 299.1175pt>
+<../src/images/steps.png, id=4, 359.3425pt x 174.6525pt>
 File: ../src/images/steps.png Graphic file (type png)
 <use ../src/images/steps.png>
 Package pdftex.def Info: ../src/images/steps.png  used on input line 102.
-(pdftex.def)             Requested size: 429.10175pt x 208.94266pt.
+(pdftex.def)             Requested size: 429.10175pt x 208.57458pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -605,7 +605,7 @@ cmtt/m/n/12 https : / / github . com / lorenzozanolin /
 (./main.bbl [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \vbox (107.04092pt too high) has occurred while \output is active []
+Overfull \vbox (106.67285pt too high) has occurred while \output is active []
 
 
 [2 <../src/images/steps.png> <../src/images/Half_adder.png> <../src/images/Full
@@ -634,7 +634,7 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (3 pages, 267256 bytes).
+Output written on main.pdf (3 pages, 261340 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream

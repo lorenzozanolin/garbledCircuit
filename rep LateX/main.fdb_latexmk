@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex main"] 1684096573 "main.aux" "main.bbl" "main" 1684096661
+["bibtex main"] 1684096573 "main.aux" "main.bbl" "main" 1684097054
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1684096661 1517 3ac8ba0f18490f912bcf7b8bcd097834 "pdflatex"
+  "main.aux" 1684097054 1517 3ac8ba0f18490f912bcf7b8bcd097834 "pdflatex"
   "thud.bib" 1684076816 922 fb2e27581f6f10f7ac2329e0a3ac86ec ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1684096660 "main.tex" "main.pdf" "main" 1684096661
+["pdflatex"] 1684097053 "main.tex" "main.pdf" "main" 1684097054
   "../src/images/Circuit.png" 1683726244 21947 968cb78be24f41b502052bbdc93a8928 ""
   "../src/images/Full-adder.png" 1683215311 54023 52b8ed45e43f16b41b889992331d6050 ""
   "../src/images/Half_adder.png" 1683215365 24413 32b308f0d96590b66a4511fa929b094c ""
-  "../src/images/steps.png" 1684096452 138365 1c839ca91da3dd34a164b286bd69a3f8 ""
+  "../src/images/steps.png" 1684097030 93407 3718e1a2424b9cab4a0d89b94e804704 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -151,7 +151,7 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1655737347 2826443 f0239110e117b9c997e741837a19f9cb ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "main.aux" 1684096661 1517 3ac8ba0f18490f912bcf7b8bcd097834 "pdflatex"
+  "main.aux" 1684097054 1517 3ac8ba0f18490f912bcf7b8bcd097834 "pdflatex"
   "main.bbl" 1684096573 561 fc6d9f8512e4aee0d076ebd6a9d8dc9d "bibtex main"
   "main.tex" 1684096655 5479 b248469c36a893ca4104289e2411cb19 ""
   (generated)
