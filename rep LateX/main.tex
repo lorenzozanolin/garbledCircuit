@@ -91,11 +91,16 @@ colback=black!5!white, colframe=black!75!white,fonttitle=\bfseries, title = #1}
 
 
 \section{Outline}
-
 Please write a general overview explaining the structure of your report. This can be brief (one paragraph), but it should make it clear how the report is structured. The overall length of your report must not exceed 5 pages (including figures, algorithms, tables, and references). This report is structured as follows: I will provide a brief overview of the the written project in Section \ref{sec:Overview}. Then I will explain how I would suggest you use your time to achieve a good write up in Section \ref{sec:Time}, and finally I will explain and illustrate the marking scheme in Section \ref{sec:Marking}
 
 \section{Yao's protocol}\label{sec:yao}
-This project covers the Yao's protocol; more precisely the \textit{Secure Multi-Party Com- putation}. The request was to implement a program for which two user can sum up their values without sharing them with the opposing party.
+This project covers the Yao's protocol\cite{yao}; more precisely the \textit{Secure Multi-Party Com- putation}. This protocol allows two parties, Alice who knows x and Bob who knows y, to compute jointly the value of $f(x, y)$ in a way that does not reveal to each side more information than can be deduced from $f(x, y)$\cite{ot}.
+In this scenario Alice is the garbler, while Bob is the evaluator. There are two principles that must be respected\cite{principles}: 
+\begin{itemize}
+    \item \textit{privacy}: nothing is learned from the protocol other than the output;
+    \item \textit{correctness}: the output is distributed according to the prescribed functionality.
+\end{itemize}
+The request was to implement a program for which two user can sum up their set of values without sharing them with the opposing party; in this case we decided to create a 8-bit adder circuit. Full details of my implementation can be found at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.
 
 
 \section{Real word application}\label{sec:world}
