@@ -77,37 +77,44 @@ They will behave as follows:
 \section{Implementation}
 We will present how to implement the \textit{circuit} and how to make Alice and Bob comunicate securely.
 \subsection{Circuit}
-We will present briefly the 8-bit sum circuit. There are two basic components in this construction:
+We will present briefly the 8-bit sum circuit. There are three basic components in this construction:
 \begin{itemize}
     \item \textit{\hyperref[half]{Half Adder}}: used to sum the right-most digit;
     \item \textit{\hyperref[full]{Full adder}}:  used to sum a generic digit in the number, ranging from position 1 to 8. It receives in input also carry of the previous sum.
+    \item \textit{\hyperref[overflow]{If then else}}: used to prevent overflow, induced by the 2-complement sum.
 \end{itemize}
 
 \begin{figure}[!htb]
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}{0.3\textwidth}
         \centering
         \includegraphics[width=.7\linewidth]{../src/images/Half_adder.png}
         \caption{Half Adder}\label{half}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.48\textwidth}
+    \begin{minipage}{0.3\textwidth}
         \centering
         \includegraphics[width=.8\linewidth]{../src/images/Full-adder.png}
         \caption{Full Adder}\label{full}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{../src/images/overflow.png}
+        \caption{If then else}\label{overflow}
     \end{minipage}
 \end{figure}
 
 \footnote{\ref{half} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg}\\ 
 \ref{full} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg}.}
 
-We then proceede creating the circuit by wiring 7 full adders and an half adder together, as represented in Figure \ref{circuit}.
+We then proceede creating the circuit by wiring 7 full adders, an half adder and the if-then-else together, as represented in Figure \ref{circuit}.
 
 \begin{figure}[!h]
     \centering
     \includegraphics[width=0.95\linewidth]{../src/images/Circuit.png}
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
-Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. The final sum has 9 bit representation, thus the maximum result that we can obtain is 510.
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case, since we are dealing with \textit{integers}, we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254].
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
@@ -205,7 +212,15 @@ In this case the circuit is represented as follows:
             {"id": 50, "type": "AND", "in": [8,16]},
             {"id": 51, "type": "XOR", "in": [48,49]},
             {"id": 52, "type": "AND", "in": [48,49]},
-            {"id": 53, "type": "OR", "in": [50,52]}
+            {"id": 53, "type": "OR", "in": [50,52]},
+
+            {"id": 54, "type": "XOR", "in": [48,53]},
+            {"id": 55, "type": "XOR", "in": [48,53]},
+            {"id": 56, "type": "NOT", "in": [55]},
+            {"id": 57, "type": "NOT", "in": [53]},
+            {"id": 58, "type": "AND", "in": [53,54]},
+            {"id": 59, "type": "AND", "in": [56,57]},
+            {"id": 60, "type": "OR", "in": [58,59]}
           ]}]}
     \end{lstlisting}
 We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour.
@@ -263,10 +278,11 @@ To run the program you need some packages:
 \begin{itemize}
     \item \textit{ZeroMQ} used in \inlinecode{util.py} to implement communication;
     \item \textit{SymPy} to use prime numbers;
-    \item \textit{AES} from encryption.
+    \item \textit{AES} from encryption;
+    \item \textit{Bits} from bitstring, to do conversions from 2-complement to integers.
 \end{itemize}
 Simply run: 
-\inlinecode{\$ pip3 install pyzmq cryptography sympy}
+\inlinecode{\$ pip3 install pyzmq sympy cryptography bitstring}
 \subsection{Execution}
 As already writte, there are two parties: Alice and Bob. You must run on two different terminals them. From now, for simplicity, we assume that we are positioned inside \inlinecode{/src/}.
 From Alice's Terminal, simply run \inlinecode{make alice}, while for Bob's Terminal run run \inlinecode{make bob}.\\
@@ -277,18 +293,19 @@ A practical example will follow, we will show the output of each terminal.\\
 \begin{lstlisting}[frame=single, basicstyle=\scriptsize]
 $ make alice
 python3 code/main.py alice   -c circuits/add.json
-Enter the list of integers of Alice's set: 1 2 3
+Enter the list of integers of Alice's set: 1 2 -5
+[1, 1, 1, 1, 1, 1, 1, 0]
 
 ======== 8 bit adder ========
 
 Values of the computation
 
-Syntax: parties/result:  [list of bits] =   [correspective values]
+Syntax: parties/result:  [list of bits] = [correspective values]
 
-Alice: [8, 7, 6, 5, 4, 3, 2, 1] = 0 0 0 0 0 1 1 0
-Computed result by circuit: [53, 51, 46, 41, 36, 31, 26, 21, 17] = 0 0 0 0 1 0 1 0 1
+Alice: [8, 7, 6, 5, 4, 3, 2, 1] = 1 1 1 1 1 1 1 0
+Computed result by circuit: [53, 51, 46, 41, 36, 31, 26, 21, 17] = 1 1 1 1 1 1 0 0 0
 
-The sum has been done correctly, result is 21.
+The sum has been done correctly, result is -8.
 \end{lstlisting}
 \vfill
 \clearpage
@@ -296,14 +313,16 @@ The sum has been done correctly, result is 21.
 \begin{lstlisting}[frame=single, basicstyle=\scriptsize]
 $ make bob
 python3 code/main.py bob
-Enter the list of integers of Bob's set: 4 5 6
+Enter the list of integers of Bob's set: 4 6 -16
 Received 8 bit adder
+[1, 1, 1, 1, 1, 0, 1, 0]
 
 Syntax:  parties/result  [list of bits] = [correspective values]
 
-Bob [16, 15, 14, 13, 12, 11, 10, 9] = 0 0 0 0 1 1 1 1
+Bob [16, 15, 14, 13, 12, 11, 10, 9] = 1 1 1 1 1 0 1 0
 
-The sum has been done correctly, result is 21.
+
+The sum has been done correctly, result is -8.
 \end{lstlisting}
 \textit{Interpretation}: As already written in the output, the syntax is\\ \inlinecode{parties/result:  [list of bits] =   [correspective values]}.\\
 The numbers on the left represent the bits in the circuit \inlinecode{add.json}, while the right ones represent the corrispective values. The last line is the output of the function \inlinecode{verifyOperation}.
