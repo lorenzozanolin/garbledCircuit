@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1684096573 "main.aux" "main.bbl" "main" 1684097391
+["bibtex main"] 1684136166 "main.aux" "main.bbl" "main" 1684136257
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1684097391 1517 3ac8ba0f18490f912bcf7b8bcd097834 "pdflatex"
+  "main.aux" 1684136256 1517 4a79a8c84c9000911c69a9978aa18454 "pdflatex"
   "thud.bib" 1684076816 922 fb2e27581f6f10f7ac2329e0a3ac86ec ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1684097390 "main.tex" "main.pdf" "main" 1684097391
+["pdflatex"] 1684136256 "main.tex" "main.pdf" "main" 1684136257
   "../src/images/Circuit.png" 1683726244 21947 968cb78be24f41b502052bbdc93a8928 ""
   "../src/images/Full-adder.png" 1683215311 54023 52b8ed45e43f16b41b889992331d6050 ""
   "../src/images/Half_adder.png" 1683215365 24413 32b308f0d96590b66a4511fa929b094c ""
@@ -151,9 +151,9 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1655737347 2826443 f0239110e117b9c997e741837a19f9cb ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "main.aux" 1684097391 1517 3ac8ba0f18490f912bcf7b8bcd097834 "pdflatex"
-  "main.bbl" 1684096573 561 fc6d9f8512e4aee0d076ebd6a9d8dc9d "bibtex main"
-  "main.tex" 1684097387 5695 727f31939176999e76ce5c31c69ed91f ""
+  "main.aux" 1684136256 1517 4a79a8c84c9000911c69a9978aa18454 "pdflatex"
+  "main.bbl" 1684136166 561 fc6d9f8512e4aee0d076ebd6a9d8dc9d "bibtex main"
+  "main.tex" 1684136252 5686 62ad45f2cdda4ec965afdcbed0ef0238 ""
   (generated)
   "main.aux"
   "main.log"
