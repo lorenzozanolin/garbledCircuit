@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  15 MAY 2023 22:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  15 MAY 2023 22:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -576,32 +576,26 @@ images/steps.png>]
 <../src/images/Half_adder.png, id=21, 338.26375pt x 208.78pt>
 File: ../src/images/Half_adder.png Graphic file (type png)
 <use ../src/images/Half_adder.png>
-Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 123.
+Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 124.
 (pdftex.def)             Requested size: 126.47002pt x 78.05974pt.
 <../src/images/Full-adder.png, id=22, 549.05125pt x 346.29375pt>
 File: ../src/images/Full-adder.png Graphic file (type png)
 <use ../src/images/Full-adder.png>
-Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 129.
+Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 130.
 (pdftex.def)             Requested size: 144.53833pt x 91.15973pt.
 <../src/images/overflow.png, id=23, 757.83125pt x 448.67625pt>
 File: ../src/images/overflow.png Graphic file (type png)
 <use ../src/images/overflow.png>
-Package pdftex.def Info: ../src/images/overflow.png  used on input line 135.
+Package pdftex.def Info: ../src/images/overflow.png  used on input line 136.
 (pdftex.def)             Requested size: 203.258pt x 120.33635pt.
 <../src/images/Circuit.png, id=24, 876.27374pt x 271.0125pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
-Package pdftex.def Info: ../src/images/Circuit.png  used on input line 144.
+Package pdftex.def Info: ../src/images/Circuit.png  used on input line 145.
 (pdftex.def)             Requested size: 542.02362pt x 167.63728pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (26.77788pt too wide) in paragraph at lines 150--151
-[]\OT1/cmr/m/n/12 Full de-tails of my im-ple-men-ta-tion can be found at $\OT1/
-cmtt/m/n/12 https : / / github . com / lorenzozanolin /
- []
 
 [2 <../src/images/Half_adder.png> <../src/images/Full-adder.png> <../src/images
 /overflow.png>] (./main.bbl [3 <../src/images/Circuit.png>]) [4] (./main.aux)
@@ -629,7 +623,7 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (4 pages, 296957 bytes).
+Output written on main.pdf (4 pages, 297247 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream
