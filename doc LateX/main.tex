@@ -113,15 +113,14 @@ We then proceede creating the circuit by wiring 7 full adders, an half adder and
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[width=0.95\linewidth]{../src/images/Circuit.png}
+    \includegraphics[width=0.83\linewidth]{../src/images/Circuit.png}
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
-Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case, since we are dealing with \textit{integers}, we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254].
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with \textit{integers},thus we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254].
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
-There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.\\ \\
-The project has the following structure:\\
+There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.\\ \\ The project has the following structure:\\
 \fbox{
     \begin{minipage}{40em}
     \dirtree{%
@@ -130,10 +129,7 @@ The project has the following structure:\\
     .2 images \hspace{5cm} \begin{minipage}[t]{10cm}
         This directory contains the images used{.}
         \end{minipage}.
-    .3 8-bit\_full\_adder.png.
-    .3 Circuit.png.
-    .3 Half\_adder.png.
-    .3 Full-adder.png.
+    .3 {...}.
     .2 circuits \hspace{4.5cm} \begin{minipage}[t]{10cm}
         This directory contains the circuit used{.}
         \end{minipage}.
@@ -153,15 +149,12 @@ The project has the following structure:\\
     .3 bob.txt.
     }
     \end{minipage}
-}\\
-
+}\\ \\
 The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.
 \subsubsection{Coding part}
 First thing first, we need to represent the \textit{circuit}; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the other following the structure represented in Figure \ref{circuit}.\\* Each gate that appears in figure \ref{circuit} is represented in a single JSON line.\\*
-\vfill
-\clearpage
-The syntax is:\\* 
-\fbox{\inlinecode{"id" : <gateId>, "type" : "<TYPE>", "in": [<gateIdInput1>, <gateIdInput2>]}}\\
+The syntax is:\\ \\
+\fbox{\inlinecode{"id" : <gateId>, "type" : "<TYPE>", "in": [<gateIdInput1>, <gateIdInput2>]}}\\ \\
 In this case the circuit is represented as follows:
 \begin{lstlisting}[language=json,firstnumber=1]
     {"circuits": [
@@ -309,8 +302,6 @@ Computed result by circuit: [53, 51, 46, 41, 36, 31, 26, 21, 17] = 1 1 1 1 1 1 0
 
 The sum has been done correctly, result is -8.
 \end{lstlisting}
-\vfill
-\clearpage
 \textbf{Bob's side}:
 \begin{lstlisting}[frame=single, basicstyle=\scriptsize]
 $ make bob
