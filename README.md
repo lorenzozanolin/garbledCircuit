@@ -3,7 +3,7 @@ Project for the Introduction to Cybersecurity course. The aim is to develop an Y
 
 In this project, as already written, the function used is the 8-bit sum. The circuit is represented in the above figure.
 
-| <img src="src/images/8-bit_full_adder.png" width="2000"> |
+| <img src="src/images/circuit.png" width="2000"> |
 |:--:|
 | <b>Circuit </b>|
 
