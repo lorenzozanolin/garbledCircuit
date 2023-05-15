@@ -4,7 +4,7 @@ import ot
 import util
 import yao
 from abc import ABC, abstractmethod
-from requirements import saveSet,verifyOperation,askForInput
+from requirements import saveSet,verifyOperation,askForInput,intToBin,binToInt
 
 logging.basicConfig(format="[%(levelname)s] %(message)s",
                     level=logging.WARNING)
@@ -108,8 +108,9 @@ class Alice(YaoGarbler):
             for w, (key0, key1) in keys.items() if w in b_wires
         }
         
-        bits_a = list(f"{sum(self.set):b}".zfill(8)) # Alice's inputs, adapt size to 8 bit
+        bits_a = list(intToBin(sum(self.set))) # Alice's inputs, adapt size to 8 bit with 2-complement
         bits_a = [int(i) for i in bits_a]   #convert in a list of int
+        print(bits_a)
         
         # Map Alice's wires to (key, encr_bit)
         for i in range(len(a_wires)):
@@ -129,7 +130,7 @@ class Alice(YaoGarbler):
         print(f"Alice: {a_wires} = {str_bits_a} \n"
               f"Computed result by circuit: {outputs} = {str_result}")
         
-        self.result = int(str_result.replace(" ", ""),2)  #result converted in decimal base, i remove white spaces
+        self.result = binToInt(str_result.replace(" ", ""))  #result converted in decimal base, i remove white spaces
         
     def _print_tables(self, entry):
         """Print garbled tables."""
@@ -180,8 +181,9 @@ class Bob:
 
         print(f"Received {circuit['id']}")
         
-        bits_b = list(f"{sum(self.set):b}".zfill(8)) # Bob's inputs, adapt size to 8 bit
+        bits_b = list(intToBin(sum(self.set))) # Bob's inputs, adapt size to 8 bit with 2-complement
         bits_b = [int(i) for i in bits_b]   #convert in a list of int
+        print(bits_b)
 
         # Create dict mapping each wire of Bob to Bob's input
         b_inputs_clear = {

@@ -1,4 +1,5 @@
 import os.path
+from bitstring import Bits
 
 def saveSet(set,owner):
     """Save a set into the owners folder.
@@ -76,3 +77,34 @@ def askForInput(party):
         raise Exception("sum of the numbers is too high, you must enter numbers whose sum is between 0-255")
     
     return numbers
+
+def intToBin(number):
+    """Receives an integer number and returns the 2-complement representation of it.
+    Args:
+        number: integer that must belong to [-128,127]
+    Raise:
+        exception if the number does not belong to [-128,127]
+        
+    Returns:
+        The 2-complement representation
+    """
+    if(number>127 or number< (-128)):
+        raise Exception("Number does not belong to [-128,127]")
+    s = bin(number & int("1"*8, 2))[2:]
+    return ("{0:0>%s}" % (8)).format(s)
+    
+def binToInt(number):
+    """Receives an integer number and returns the 2-complement representation of it.
+       We only consider number of 9 bits. 
+    Args:
+        number: binary number of 9 bits.
+    Raise:
+        exception if the number has length different from 9 bits.
+
+    Returns:
+        The 2-complement representation
+    """
+    if(len(number)>9):
+        raise Exception("Number has length different from 9bit")
+    
+    return Bits(bin=number).int
