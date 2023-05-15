@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  15 MAY 2023 10:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  15 MAY 2023 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,11 +564,11 @@ LaTeX Warning: Reference `sec:Time' on page 5-1 undefined on input line 94.
 
 LaTeX Warning: Reference `sec:Marking' on page 5-1 undefined on input line 94.
 
-<../src/images/steps.png, id=4, 359.3425pt x 174.6525pt>
+<../src/images/steps.png, id=4, 446.66875pt x 140.525pt>
 File: ../src/images/steps.png Graphic file (type png)
 <use ../src/images/steps.png>
 Package pdftex.def Info: ../src/images/steps.png  used on input line 102.
-(pdftex.def)             Requested size: 338.76563pt x 164.66373pt.
+(pdftex.def)             Requested size: 496.859pt x 156.31908pt.
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../src/
@@ -576,38 +576,47 @@ images/steps.png>]
 <../src/images/Half_adder.png, id=21, 338.26375pt x 208.78pt>
 File: ../src/images/Half_adder.png Graphic file (type png)
 <use ../src/images/Half_adder.png>
-Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 122.
-(pdftex.def)             Requested size: 151.76497pt x 93.67296pt.
+Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 123.
+(pdftex.def)             Requested size: 126.47002pt x 78.05974pt.
 <../src/images/Full-adder.png, id=22, 549.05125pt x 346.29375pt>
 File: ../src/images/Full-adder.png Graphic file (type png)
 <use ../src/images/Full-adder.png>
-Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 128.
-(pdftex.def)             Requested size: 173.4471pt x 109.39485pt.
-<../src/images/Circuit.png, id=23, 2569.6pt x 856.19875pt>
+Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 129.
+(pdftex.def)             Requested size: 144.53833pt x 91.15973pt.
+<../src/images/overflow.png, id=23, 757.83125pt x 448.67625pt>
+File: ../src/images/overflow.png Graphic file (type png)
+<use ../src/images/overflow.png>
+Package pdftex.def Info: ../src/images/overflow.png  used on input line 135.
+(pdftex.def)             Requested size: 203.258pt x 120.33635pt.
+<../src/images/Circuit.png, id=24, 876.27374pt x 271.0125pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
-Package pdftex.def Info: ../src/images/Circuit.png  used on input line 135.
-(pdftex.def)             Requested size: 429.10175pt x 142.96507pt.
+Package pdftex.def Info: ../src/images/Circuit.png  used on input line 144.
+(pdftex.def)             Requested size: 542.02362pt x 167.63728pt.
 
-Overfull \hbox (26.77788pt too wide) in paragraph at lines 139--140
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (26.77788pt too wide) in paragraph at lines 150--151
 []\OT1/cmr/m/n/12 Full de-tails of my im-ple-men-ta-tion can be found at $\OT1/
 cmtt/m/n/12 https : / / github . com / lorenzozanolin /
  []
 
 [2 <../src/images/Half_adder.png> <../src/images/Full-adder.png> <../src/images
-/Circuit.png>] (./main.bbl) [3] (./main.aux)
+/overflow.png>] (./main.bbl) [3 <../src/images/Circuit.png>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 17939 strings out of 478268
- 361741 string characters out of 5846347
- 619186 words of memory out of 5000000
- 35877 multiletter control sequences out of 15000+600000
+ 17947 strings out of 478268
+ 361950 string characters out of 5846347
+ 620196 words of memory out of 5000000
+ 35884 multiletter control sequences out of 15000+600000
  477537 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,8n,104p,650b,370s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,8n,104p,650b,419s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -620,10 +629,10 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (3 pages, 263080 bytes).
+Output written on main.pdf (3 pages, 295411 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
+ 84 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

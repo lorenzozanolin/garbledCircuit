@@ -98,8 +98,8 @@ This project covers the Yao's protocol\cite{yao}; more precisely the \textit{Sec
 In this scenario Alice is the garbler, while Bob is the evaluator. Another important role is the use of the \textit{OT}\cite{ot}, which is responsible to let Bob knows his encrypted input. An example of functioning is represented in figure \ref{steps}.
 
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.75\linewidth]{../src/images/steps.png}
+    \makebox[\textwidth][c]{
+    \includegraphics[width=1.1\linewidth]{../src/images/steps.png}}
     \caption{Steps of the SMPC}\label{steps}
 \end{figure}
 
@@ -114,33 +114,44 @@ There are two principles that must be respected\cite{principles}:
 \end{itemize}
 
 The request was to implement a program for which two user can sum up their set of values without sharing them with the opposing party; in this case we decided to create a 8-bit adder circuit.
-The circuit uses 7 full adders and 1 half adder, represented in figures \ref{half} \ref{full}, concatenated together; the implementation of the entire circuit is represented in figure \ref{circuit}.
+The circuit uses 7 full adders, 1 half adder and 1 if-then-else, represented in figures \ref{half} \ref{full} \ref{overflow}, concatenated together; the implementation of the entire circuit is represented in figure \ref{circuit}.
 
 \begin{figure}[!htb]
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=.7\linewidth]{../src/images/Half_adder.png}
-        \caption{Half Adder}\label{half}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.48\textwidth}
-        \centering
-        \includegraphics[width=.8\linewidth]{../src/images/Full-adder.png}
-        \caption{Full Adder}\label{full}
-    \end{minipage}
+    \begin{center}
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=.7\linewidth]{../src/images/Half_adder.png}
+            \caption{Half Adder}\label{half}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=.8\linewidth]{../src/images/Full-adder.png}
+            \caption{Full Adder}\label{full}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=1\linewidth]{../src/images/overflow.png}
+            \caption{If then else}\label{overflow}
+        \end{minipage}
+    \end{center}
 \end{figure}
-
 \begin{figure}[!h]
-    \centering
-    \includegraphics[width=0.95\linewidth]{../src/images/Circuit.png}
+    %\centering
+    \makebox[\textwidth][c]{
+    \includegraphics[width=1.2\linewidth]{../src/images/Circuit.png}
+    }
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
+
+
 
 Full details of my implementation can be found at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.
 
 
 \section{Real word application}\label{sec:world}
-There are many practical uses of this protocol, an example could be the following. Imagine you are an employee in a corporation and you want to know the average salary without revealing to anyone your income; in this scenario you can the use the \textit{SMPC} protocol to obtain the average. 
+There are many practical uses of this protocol, an example could be the following: imagine you are an employee in a corporation and you want to know the average salary without revealing to anyone your income. In this scenario you can the use the \textit{SMPC} protocol to get everyone's data and compute the sum; then you can proceede by calculating the mean. In this example anybody can understand values of other employees, thus \textit{privacy} is respected.
 \section{Ethical, Legal and Social aspects}\label{sec:sel}
 
 \section{Final considerations}
