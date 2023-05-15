@@ -598,6 +598,8 @@ INPUT ../src/images/Circuit.png
 INPUT ../src/images/Circuit.png
 INPUT ../src/images/Circuit.png
 INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT ./main.bbl
