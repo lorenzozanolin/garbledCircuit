@@ -85,26 +85,28 @@ We will present briefly the 8-bit sum circuit. There are three basic components 
 \end{itemize}
 
 \begin{figure}[!htb]
-    \begin{minipage}{0.3\textwidth}
-        \centering
-        \includegraphics[width=.7\linewidth]{../src/images/Half_adder.png}
-        \caption{Half Adder}\label{half}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.3\textwidth}
-        \centering
-        \includegraphics[width=.8\linewidth]{../src/images/Full-adder.png}
-        \caption{Full Adder}\label{full}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.3\textwidth}
-        \centering
-        \includegraphics[width=1\linewidth]{../src/images/overflow.png}
-        \caption{If then else}\label{overflow}
-    \end{minipage}
+    \begin{center}
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=.7\linewidth]{../src/images/Half_adder.png}
+            \caption{Half Adder}\label{half}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.4\textwidth}
+            \centering
+            \includegraphics[width=.8\linewidth]{../src/images/Full-adder.png}
+            \caption{Full Adder}\label{full}
+        \end{minipage}
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=1\linewidth]{../src/images/overflow.png}
+            \caption{If then else}\label{overflow}
+        \end{minipage}
+    \end{center}
 \end{figure}
 
-\footnote{\ref{half} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg}\\ 
+\footnote{\ref{half} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg} 
 \ref{full} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg}.}
 
 We then proceede creating the circuit by wiring 7 full adders, an half adder and the if-then-else together, as represented in Figure \ref{circuit}.
