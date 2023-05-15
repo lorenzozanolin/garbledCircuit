@@ -115,6 +115,7 @@ There are two principles that must be respected\cite{principles}:
 
 The request was to implement a program for which two user can sum up their set of values without sharing them with the opposing party; in this case we decided to create a 8-bit adder circuit.
 The circuit uses 7 full adders, 1 half adder and 1 if-then-else, represented in figures \ref{half} \ref{full} \ref{overflow}, concatenated together; the implementation of the entire circuit is represented in figure \ref{circuit}.
+In this implementation, as you can read in my full review at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}, \textit{privacy} is respected since neither Alice or Bob can understand the set of the other. The same holds for the \textit{correctness}: assuming that both actors behave always honestly, the result obtained through Yao's protocol is guaranteed to be the same as that obtained through a standard computation, and this is verified by a procedure inside the program.
 
 \begin{figure}[!htb]
     \begin{center}
@@ -146,8 +147,6 @@ The circuit uses 7 full adders, 1 half adder and 1 if-then-else, represented in 
 \end{figure}
 
 
-
-Full details of my implementation can be found at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.
 
 
 \section{Real word application}\label{sec:world}
