@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{smpc}
+Daniel Escudero.
+\newblock An introduction to secret-sharing-based secure multiparty
+  computation.
+\newblock Cryptology ePrint Archive, Paper 2022/062, 2022.
+\newblock \url{https://eprint.iacr.org/2022/062}.
+
 \bibitem{principles}
 Yehuda Lindell and Benny Pinkas.
 \newblock A proof of security of yao's protocol for two-party computation.
