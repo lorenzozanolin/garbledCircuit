@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  17 MAY 2023 14:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  17 MAY 2023 15:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -598,7 +598,8 @@ Package pdftex.def Info: ../src/images/Circuit.png  used on input line 145.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2 <../src/images/Half_adder.png> <../src/images/Full-adder.png> <../src/images
-/overflow.png>] [3 <../src/images/Circuit.png>] (./main.bbl) [4] (./main.aux)
+/overflow.png>] [3 <../src/images/Circuit.png>] (./main.bbl [4]) [5]
+(./main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -606,7 +607,7 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  17949 strings out of 478268
  361983 string characters out of 5846347
- 620196 words of memory out of 5000000
+ 621196 words of memory out of 5000000
  35886 multiletter control sequences out of 15000+600000
  478142 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -623,10 +624,10 @@ exlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/tex
 live/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texl
 ive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (4 pages, 300797 bytes).
+Output written on main.pdf (5 pages, 303485 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 90 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
