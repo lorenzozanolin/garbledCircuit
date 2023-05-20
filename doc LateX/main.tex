@@ -162,7 +162,7 @@ In this case the circuit is represented as follows:
           "id": "8 bit adder",
           "alice": [8, 7 ,6 ,5 ,4 ,3 ,2 ,1],
           "bob": [16, 15, 14, 13, 12, 11, 10, 9],
-          "out": [53, 51, 46, 41, 36, 31, 26, 21, 17],
+          "out": [60, 51, 46, 41, 36, 31, 26, 21, 17],
           "gates": [
             {"id": 17, "type": "XOR", "in": [1, 9]},
             {"id": 18, "type": "AND", "in": [1, 9]},
@@ -213,7 +213,7 @@ In this case the circuit is represented as follows:
             {"id": 55, "type": "XOR", "in": [48,53]},
             {"id": 56, "type": "NOT", "in": [55]},
             {"id": 57, "type": "NOT", "in": [53]},
-            {"id": 58, "type": "AND", "in": [53,54]},
+            {"id": 58, "type": "AND", "in": [48,55]},
             {"id": 59, "type": "AND", "in": [56,57]},
             {"id": 60, "type": "OR", "in": [58,59]}
           ]}]}
@@ -317,7 +317,7 @@ Bob [16, 15, 14, 13, 12, 11, 10, 9] = 1 1 1 1 1 0 1 0
 
 The sum has been done correctly, result is -8.
 \end{lstlisting}
-\textit{Interpretation}: As already written in the output, the syntax is\\ \inlinecode{parties/result:  [list of bits] =   [correspective values]}.\\
+\textit{Interpretation}: As already written in the output, the syntax is\\ \inlinecode{parties/result:  [list of bits] =   [correspective values]}. \vspace{2mm} \\
 The numbers on the left represent the bits in the circuit \inlinecode{add.json}, while the right ones represent the corrispective values. The last line is the output of the function \inlinecode{verifyOperation}.
 
 
