@@ -206,90 +206,6 @@ class Bob:
         print(self.socket.receive())
 
 
-class LocalTest(YaoGarbler):
-    """A class for local tests.
-
-    Print a circuit evaluation or garbled tables.
-
-    Args:
-        circuits: the JSON file containing circuits
-        print_mode: Print a clear version of the garbled tables or
-            the circuit evaluation (the default).
-    """
-    def __init__(self, circuits, print_mode="circuit"):
-        super().__init__(circuits)
-        self._print_mode = print_mode
-        self.modes = {
-            "circuit": self._print_evaluation,
-            "table": self._print_tables,
-        }
-        logging.info(f"Print mode: {print_mode}")
-
-    def start(self):
-        """Start local Yao protocol."""
-        for circuit in self.circuits:
-            self.modes[self.print_mode](circuit)
-
-    def _print_tables(self, entry):
-        """Print garbled tables."""
-        entry["garbled_circuit"].print_garbled_tables()
-
-    def _print_evaluation(self, entry):
-        """Print circuit evaluation."""
-        circuit, pbits, keys = entry["circuit"], entry["pbits"], entry["keys"]
-        garbled_tables = entry["garbled_tables"]
-        outputs = circuit["out"]
-        a_wires = circuit.get("alice", [])  # Alice's wires
-        a_inputs = {}  # map from Alice's wires to (key, encr_bit) inputs
-        b_wires = circuit.get("bob", [])  # Bob's wires
-        b_inputs = {}  # map from Bob's wires to (key, encr_bit) inputs
-        pbits_out = {w: pbits[w] for w in outputs}  # p-bits of outputs
-        N = len(a_wires) + len(b_wires)
-
-        print(f"======== {circuit['id']} ========")
-
-        # Generate all possible inputs for both Alice and Bob
-        for bits in [format(n, 'b').zfill(N) for n in range(2**N)]:
-            bits_a = [int(b) for b in bits[:len(a_wires)]]  # Alice's inputs
-            bits_b = [int(b) for b in bits[N - len(b_wires):]]  # Bob's inputs
-
-            # Map Alice's wires to (key, encr_bit)
-            for i in range(len(a_wires)):
-                a_inputs[a_wires[i]] = (keys[a_wires[i]][bits_a[i]],
-                                        pbits[a_wires[i]] ^ bits_a[i])
-
-            # Map Bob's wires to (key, encr_bit)
-            for i in range(len(b_wires)):
-                b_inputs[b_wires[i]] = (keys[b_wires[i]][bits_b[i]],
-                                        pbits[b_wires[i]] ^ bits_b[i])
-
-            result = yao.evaluate(circuit, garbled_tables, pbits_out, a_inputs,
-                                  b_inputs)
-
-            # Format output
-            str_bits_a = ' '.join(bits[:len(a_wires)])
-            str_bits_b = ' '.join(bits[len(a_wires):])
-            str_result = ' '.join([str(result[w]) for w in outputs])
-
-            print(f"  Alice{a_wires} = {str_bits_a} "
-                  f"Bob{b_wires} = {str_bits_b}  "
-                  f"Outputs{outputs} = {str_result}")
-
-        print()
-
-    @property
-    def print_mode(self):
-        return self._print_mode
-
-    @print_mode.setter
-    def print_mode(self, print_mode):
-        if print_mode not in self.modes:
-            logging.error(f"Unknown print mode '{print_mode}', "
-                          f"must be in {list(self.modes.keys())}")
-            return
-        self._print_mode = print_mode
-
-
 def main(
     party,
     circuit_path="circuits/add.json",
@@ -305,9 +221,6 @@ def main(
     elif party == "bob":
         bob = Bob(oblivious_transfer=oblivious_transfer)
         bob.listen()
-    elif party == "local":
-        local = LocalTest(circuit_path, print_mode=print_mode)
-        local.start()
     else:
         logging.error(f"Unknown party '{party}'")
 
@@ -326,14 +239,14 @@ if __name__ == '__main__':
 
         parser = argparse.ArgumentParser(description="Run Yao protocol.")
         parser.add_argument("party",
-                            choices=["alice", "bob", "local"],
+                            choices=["alice", "bob"],
                             help="the yao party to run")
         parser.add_argument(
             "-c",
             "--circuit",
             metavar="circuit.json",
             default="circuits/default.json",
-            help=("the JSON circuit file for alice and local tests"),
+            help=("the JSON circuit file for alice"),
         )
         parser.add_argument("--no-oblivious-transfer",
                             action="store_true",
