@@ -1,7 +1,11 @@
 # Garbled Circuit
 Project for the Introduction to Cybersecurity course. The aim is to develop an Yao's Protocol implementation[^fn3]; we will use it to sum two sets of values.  
 
-In this project, as already written, the function used is the 8-bit sum. The circuit is represented in the above figure.
+Alice and Bob have two sets of numbers (given by the user), they compute the sum of this set on their own. Then they execute the secure sum of their
+set's sum using Yao's protocol.
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with integers, thus we also need to consider negative numbers; to do that we are using 2- complement. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254].
+
+The circuit is represented in the above figure.
 
 | <img src="src/images/Circuit.png" width="2000"> |
 |:--:|
@@ -26,10 +30,6 @@ If Then Else is used to prevent overflow, induced by the 2-complement sum.
 | <img src="src/images/overflow.png" width="2000"> |
 |:--:|
 | <b>If Then Else</b>|
-
-Alice and Bob have two sets of numbers (given by the user), they compute the sum of this set on their own. Then they execute the secure sum of their
-set's sum using Yao's protocol.
-Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with integers, thus we also need to consider negative numbers; to do that we are using 2- complement. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254].
 
 ## Project structure
 
