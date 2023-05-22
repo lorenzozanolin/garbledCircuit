@@ -1,5 +1,19 @@
 \begin{thebibliography}{1}
 
+\bibitem{healthcare}
+Xiao Dong, David~A Randolph, Chenkai Weng, Abel~N Kho, Jennie~M Rogers, and
+  Xiao Wang.
+\newblock Developing high performance secure multi-party computation protocols
+  in healthcare: A case study of patient risk stratification.
+\newblock {\em AMIA Jt Summits Transl Sci Proc}, 2021:200--209, 2021.
+
+\bibitem{application}
+Wenliang Du and Mikhail~J. Atallah.
+\newblock Secure multi-party computation problems and their applications: A
+  review and open problems.
+\newblock NSPW '01, page 13–22, New York, NY, USA, 2001. Association for
+  Computing Machinery.
+
 \bibitem{smpc}
 Daniel Escudero.
 \newblock An introduction to secret-sharing-based secure multiparty

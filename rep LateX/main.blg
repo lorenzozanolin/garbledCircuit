@@ -3,44 +3,46 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: plain.bst
 Database file #1: thud.bib
-You've used 4 entries,
+Warning--empty booktitle in application
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            520 strings with 4495 characters,
-and the built_in function-call counts, 1134 in all, are:
-= -- 111
-> -- 40
-< -- 1
-+ -- 18
-- -- 12
-* -- 53
-:= -- 192
-add.period$ -- 13
-call.type$ -- 4
-change.case$ -- 18
+            534 strings with 4986 characters,
+and the built_in function-call counts, 2027 in all, are:
+= -- 205
+> -- 86
+< -- 2
++ -- 36
+- -- 28
+* -- 111
+:= -- 330
+add.period$ -- 20
+call.type$ -- 6
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 50
-empty$ -- 98
-format.name$ -- 12
-if$ -- 246
+cite$ -- 7
+duplicate$ -- 89
+empty$ -- 156
+format.name$ -- 28
+if$ -- 442
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 3
-newline$ -- 24
-num.names$ -- 8
-pop$ -- 21
+int.to.str$ -- 6
+missing$ -- 5
+newline$ -- 34
+num.names$ -- 12
+pop$ -- 35
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 26
 quote$ -- 0
-skip$ -- 44
+skip$ -- 79
 stack$ -- 0
-substring$ -- 50
-swap$ -- 14
-text.length$ -- 1
+substring$ -- 99
+swap$ -- 30
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 16
-warning$ -- 0
-while$ -- 10
-width$ -- 5
-write$ -- 47
+type$ -- 24
+warning$ -- 1
+while$ -- 17
+width$ -- 7
+write$ -- 71
+(There was 1 warning)
