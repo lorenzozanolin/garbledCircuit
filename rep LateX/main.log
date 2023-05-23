@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  22 MAY 2023 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  23 MAY 2023 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -502,20 +502,20 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
 \c@lstlisting=\count307
 
 (/usr/local/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -542,13 +542,13 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
 
 
 (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -557,7 +557,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <../src/images/steps.png, id=4, 446.66875pt x 140.525pt>
 File: ../src/images/steps.png Graphic file (type png)
 <use ../src/images/steps.png>
-Package pdftex.def Info: ../src/images/steps.png  used on input line 102.
+Package pdftex.def Info: ../src/images/steps.png  used on input line 104.
 (pdftex.def)             Requested size: 496.859pt x 156.31908pt.
  [1
 
@@ -566,35 +566,35 @@ images/steps.png>]
 <../src/images/Half_adder.png, id=21, 338.26375pt x 208.78pt>
 File: ../src/images/Half_adder.png Graphic file (type png)
 <use ../src/images/Half_adder.png>
-Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 124.
+Package pdftex.def Info: ../src/images/Half_adder.png  used on input line 126.
 (pdftex.def)             Requested size: 126.47002pt x 78.05974pt.
 <../src/images/Full-adder.png, id=22, 549.05125pt x 346.29375pt>
 File: ../src/images/Full-adder.png Graphic file (type png)
 <use ../src/images/Full-adder.png>
-Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 130.
+Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 132.
 (pdftex.def)             Requested size: 144.53833pt x 91.15973pt.
 <../src/images/overflow.png, id=23, 757.83125pt x 448.67625pt>
 File: ../src/images/overflow.png Graphic file (type png)
 <use ../src/images/overflow.png>
-Package pdftex.def Info: ../src/images/overflow.png  used on input line 136.
+Package pdftex.def Info: ../src/images/overflow.png  used on input line 138.
 (pdftex.def)             Requested size: 203.258pt x 120.33635pt.
 <../src/images/Circuit.png, id=24, 876.27374pt x 271.0125pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
-Package pdftex.def Info: ../src/images/Circuit.png  used on input line 145.
+Package pdftex.def Info: ../src/images/Circuit.png  used on input line 147.
 (pdftex.def)             Requested size: 542.02362pt x 167.63728pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2 <../src/images/Half_adder.png> <../src/images/Full-adder.png> <../src/images
-/overflow.png>] [3 <../src/images/Circuit.png>] (./main.bbl [4]) [5]
+/overflow.png>] [3 <../src/images/Circuit.png>] [4] (./main.bbl) [5]
 (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 17950 strings out of 478268
- 361986 string characters out of 5846347
- 620215 words of memory out of 5000000
- 35887 multiletter control sequences out of 15000+600000
+ 17951 strings out of 478268
+ 361996 string characters out of 5846347
+ 621218 words of memory out of 5000000
+ 35888 multiletter control sequences out of 15000+600000
  478142 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,8n,104p,1179b,419s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -610,7 +610,7 @@ b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (5 pages, 305910 bytes).
+Output written on main.pdf (5 pages, 306569 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream
