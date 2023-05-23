@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  23 MAY 2023 15:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  23 MAY 2023 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -573,17 +573,21 @@ File: ../src/images/Full-adder.png Graphic file (type png)
 <use ../src/images/Full-adder.png>
 Package pdftex.def Info: ../src/images/Full-adder.png  used on input line 132.
 (pdftex.def)             Requested size: 144.53833pt x 91.15973pt.
-<../src/images/overflow.png, id=23, 757.83125pt x 448.67625pt>
+<../src/images/overflow.png, id=23, 730.73pt x 259.97125pt>
 File: ../src/images/overflow.png Graphic file (type png)
 <use ../src/images/overflow.png>
-Package pdftex.def Info: ../src/images/overflow.png  used on input line 138.
-(pdftex.def)             Requested size: 203.258pt x 120.33635pt.
+Package pdftex.def Info: ../src/images/overflow.png  used on input line 139.
+(pdftex.def)             Requested size: 271.01181pt x 96.41792pt.
+
+Overfull \hbox (45.16806pt too wide) in paragraph at lines 139--140
+ [][] 
+ []
+
 <../src/images/Circuit.png, id=24, 876.27374pt x 271.0125pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
-Package pdftex.def Info: ../src/images/Circuit.png  used on input line 147.
+Package pdftex.def Info: ../src/images/Circuit.png  used on input line 148.
 (pdftex.def)             Requested size: 542.02362pt x 167.63728pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -610,7 +614,7 @@ b></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
 sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></us
 r/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (5 pages, 306569 bytes).
+Output written on main.pdf (5 pages, 311401 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  50 compressed objects within 1 object stream

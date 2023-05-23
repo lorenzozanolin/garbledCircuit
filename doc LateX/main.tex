@@ -98,9 +98,9 @@ We will present briefly the 8-bit sum circuit. There are three basic components 
             \caption{Full Adder}\label{full}
         \end{minipage}
         \hfill
-        \begin{minipage}{0.45\textwidth}
+        \begin{minipage}{0.5\textwidth}
             \centering
-            \includegraphics[width=1\linewidth]{../src/images/overflow.png}
+            \includegraphics[width=1.2\linewidth]{../src/images/overflow.png}
             \caption{If then else}\label{overflow}
         \end{minipage}
     \end{center}
@@ -116,7 +116,7 @@ We then proceede creating the circuit by wiring 7 full adders, an half adder and
     \includegraphics[width=0.83\linewidth]{../src/images/Circuit.png}
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
-Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with \textit{integers},thus we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254].
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with \textit{integers}, thus we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254]. The \textit{if then else} component is used to prevent overflow situations induced by the sum, i.e.when you add two numbers with the same sign.
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
@@ -157,66 +157,69 @@ The syntax is:\\ \\
 \fbox{\inlinecode{"id" : <gateId>, "type" : "<TYPE>", "in": [<gateIdInput1>, <gateIdInput2>]}}\\ \\
 In this case the circuit is represented as follows:
 \begin{lstlisting}[language=json,firstnumber=1]
-    {"circuits": [
-        {
-          "id": "8 bit adder",
-          "alice": [8, 7 ,6 ,5 ,4 ,3 ,2 ,1],
-          "bob": [16, 15, 14, 13, 12, 11, 10, 9],
-          "out": [60, 51, 46, 41, 36, 31, 26, 21, 17],
-          "gates": [
-            {"id": 17, "type": "XOR", "in": [1, 9]},
-            {"id": 18, "type": "AND", "in": [1, 9]},
-  
-            {"id": 19, "type": "XOR", "in": [2, 10]},
-            {"id": 20, "type": "AND", "in": [2, 10]},
-            {"id": 21, "type": "XOR", "in": [18, 19]},
-            {"id": 22, "type": "AND", "in": [18, 19]},
-            {"id": 23, "type": "OR", "in": [20, 22]},
-  
-            {"id": 24, "type": "XOR", "in": [3,11]},
-            {"id": 25, "type": "AND", "in": [3,11]},
-            {"id": 26, "type": "XOR", "in": [23,24]},
-            {"id": 27, "type": "AND", "in": [23,24]},
-            {"id": 28, "type": "OR", "in": [25,27]},
-          
-            {"id": 29, "type": "XOR", "in": [4,12]},
-            {"id": 30, "type": "AND", "in": [4,12]},
-            {"id": 31, "type": "XOR", "in": [28,29]},
-            {"id": 32, "type": "AND", "in": [28,29]},
-            {"id": 33, "type": "OR", "in": [30,32]},
-  
-            {"id": 34, "type": "XOR", "in": [5,13]},
-            {"id": 35, "type": "AND", "in": [5,13]},
-            {"id": 36, "type": "XOR", "in": [33,34]},
-            {"id": 37, "type": "AND", "in": [33,34]},
-            {"id": 38, "type": "OR", "in": [35,37]},
-  
-            {"id": 39, "type": "XOR", "in": [6,14]},
-            {"id": 40, "type": "AND", "in": [6,14]},
-            {"id": 41, "type": "XOR", "in": [38,39]},
-            {"id": 42, "type": "AND", "in": [38,39]},
-            {"id": 43, "type": "OR", "in": [40,42]},
-  
-            {"id": 44, "type": "XOR", "in": [7,15]},
-            {"id": 45, "type": "AND", "in": [7,15]},
-            {"id": 46, "type": "XOR", "in": [43,44]},
-            {"id": 47, "type": "AND", "in": [43,44]},
-            {"id": 48, "type": "OR", "in": [45,47]},
-  
-            {"id": 49, "type": "XOR", "in": [8,16]},
-            {"id": 50, "type": "AND", "in": [8,16]},
-            {"id": 51, "type": "XOR", "in": [48,49]},
-            {"id": 52, "type": "AND", "in": [48,49]},
-            {"id": 53, "type": "OR", "in": [50,52]},
+    {"name":"adder",
+     "circuits":[
+      {
+        "id":"8 bit adder",
+        "alice":[47,40,33,26,19,12,5,1],
+        "bob":[48,41,34,27,20,13,6,2],
+        "out":[62,50,43,36,29,22,15,8,3],
+        "gates":[
+            {"id":3,"type":"XOR","in":[1,2]},
+            {"id":4,"type":"AND","in":[1,2]},
 
-            {"id": 54, "type": "XOR", "in": [48,53]},
-            {"id": 55, "type": "XOR", "in": [48,53]},
-            {"id": 56, "type": "NOT", "in": [55]},
-            {"id": 57, "type": "NOT", "in": [53]},
-            {"id": 58, "type": "AND", "in": [48,55]},
-            {"id": 59, "type": "AND", "in": [56,57]},
-            {"id": 60, "type": "OR", "in": [58,59]}
-          ]}]}
+            {"id":7,"type":"XOR","in":[5,6]},
+            {"id":8,"type":"XOR","in":[4,7]},
+            {"id":9,"type":"AND","in":[4,7]},
+            {"id":10,"type":"AND","in":[5,6]},
+            {"id":11,"type":"OR","in":[9,10]},
+
+            {"id":14,"type":"XOR","in":[12,13]},
+            {"id":15,"type":"XOR","in":[11,14]},
+            {"id":16,"type":"AND","in":[11,14]},
+            {"id":17,"type":"AND","in":[12,13]},
+            {"id":18,"type":"OR","in":[16,17]},
+            
+            {"id":21,"type":"XOR","in":[19,20]},
+            {"id":22,"type":"XOR","in":[18,21]},
+            {"id":23,"type":"AND","in":[18,21]},
+            {"id":24,"type":"AND","in":[19,20]},
+            {"id":25,"type":"OR","in":[23,24]},
+            
+            {"id":28,"type":"XOR","in":[26,27]},
+            {"id":29,"type":"XOR","in":[25,28]},
+            {"id":30,"type":"AND","in":[25,28]},
+            {"id":31,"type":"AND","in":[26,27]},
+            {"id":32,"type":"OR","in":[30,31]},
+            
+            {"id":35,"type":"XOR","in":[33,34]},
+            {"id":36,"type":"XOR","in":[32,35]},
+            {"id":37,"type":"AND","in":[32,35]},
+            {"id":38,"type":"AND","in":[33,34]},
+            {"id":39,"type":"OR","in":[37,38]},
+            
+            {"id":42,"type":"XOR","in":[40,41]},
+            {"id":43,"type":"XOR","in":[39,42]},
+            {"id":44,"type":"AND","in":[39,42]},
+            {"id":45,"type":"AND","in":[40,41]},
+            {"id":46,"type":"OR","in":[44,45]},
+            
+            {"id":49,"type":"XOR","in":[47,48]},
+            {"id":50,"type":"XOR","in":[46,49]},
+            {"id":51,"type":"AND","in":[46,49]},
+            {"id":52,"type":"AND","in":[47,48]},
+            {"id":53,"type":"OR","in":[51,52]},
+            
+            {"id":54,"type":"AND","in":[47,48]},
+            {"id":55,"type":"NOT","in":[47]},
+            {"id":56,"type":"NOT","in":[48]},
+            {"id":57,"type":"AND","in":[55,56]},
+            {"id":58,"type":"OR","in":[54,57]},
+            {"id":59,"type":"AND","in":[47,58]},
+            {"id":60,"type":"NOT","in":[58]},
+            {"id":61,"type":"AND","in":[50,60]},
+            {"id":62,"type":"OR","in":[59,61]}
+        ]}]}
     \end{lstlisting}
 We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour.
 It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file we can also find two functions \inlinecode{saveSet, readSet} used to write in two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt} the input values; this will be useful when we want to check the correctness of the computed result, using \inlinecode{verifyOperation}.\\
