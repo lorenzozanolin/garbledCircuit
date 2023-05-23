@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  23 MAY 2023 17:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  23 MAY 2023 17:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,11 +490,11 @@ Overfull \hbox (44.35716pt too wide) in paragraph at lines 103--104
  [][] 
  []
 
-<../src/images/Circuit.png, id=79, 876.27374pt x 271.0125pt>
+<../src/images/Circuit.png, id=79, 2368.85pt x 678.535pt>
 File: ../src/images/Circuit.png Graphic file (type png)
 <use ../src/images/Circuit.png>
 Package pdftex.def Info: ../src/images/Circuit.png  used on input line 116.
-(pdftex.def)             Requested size: 368.17094pt x 113.86995pt.
+(pdftex.def)             Requested size: 368.17094pt x 105.45139pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -605,7 +605,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  12379 strings out of 478268
  189557 string characters out of 5846347
- 845080 words of memory out of 5000000
+ 845077 words of memory out of 5000000
  30301 multiletter control sequences out of 15000+600000
  477434 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -625,9 +625,9 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (7 pages, 286993 bytes).
+Output written on main.pdf (7 pages, 493656 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
+ 316 PDF objects out of 1000 (max. 8388607)
  269 compressed objects within 3 object streams
  128 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
