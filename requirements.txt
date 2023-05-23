@@ -1,0 +1,4 @@
+bitstring==4.0.2
+cryptography==40.0.1
+pyzmq==25.0.0
+sympy==1.11.1
