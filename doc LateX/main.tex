@@ -81,7 +81,7 @@ We will present briefly the 8-bit sum circuit. There are three basic components 
 \begin{itemize}
     \item \textit{\hyperref[half]{Half Adder}}: used to sum the right-most digit;
     \item \textit{\hyperref[full]{Full adder}}:  used to sum a generic digit in the number, ranging from position 1 to 8. It receives in input also carry of the previous sum.
-    \item \textit{\hyperref[overflow]{If then else}}: used to prevent overflow, induced by the 2-complement sum.
+    \item \textit{\hyperref[overflow]{If then else}}: there could be situations, called \textit{overflow}, in which you sum two number with the same sign and obtain a number with opposite sign; to avoid this scenario, this construct is employed by examining the signs of the two numbers and the sign of the calculated result. If the two input numbers have the same sign, the output sign is set to be the same as the inputs. Instead, if the two input numbers have different signs, the sign of the result is determined accordingly to the previous circuit.  
 \end{itemize}
 
 \begin{figure}[!htb]
@@ -114,14 +114,18 @@ We then proceede creating the circuit by wiring 7 full adders, an half adder and
 \begin{figure}[!h]
     %\centering
     \makebox[\textwidth][c]{
-    \includegraphics[width=1\linewidth]{../src/images/Circuit.png}}
+    \includegraphics[width=1.2\linewidth]{../src/images/Circuit.png}}
     \caption{8-bit Adder}\label{circuit}
 \end{figure}
-Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with \textit{integers}, thus we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254]. The \textit{if then else} component is used to prevent overflow situations induced by the sum, i.e.when you add two numbers with the same sign.
+Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with \textit{integers}, thus we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254]. 
 %\subsection{Implementation}
 \subsubsection{Project structure}
 The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
 There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.\\ \\ The project has the following structure:\\
+The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.\\
+The \inlinecode{images} folder contains all images used in the report and documentation.\\
+The \inlinecode{circuits} folder contains the used circuit, in this case only \inlinecode{add.json}\\
+The \inlinecode{sets} folder contains the two files used to store sets of Alice and Bob.\\
 \fbox{
     \begin{minipage}{40em}
     \dirtree{%
@@ -151,7 +155,7 @@ There is also a dedicated GitHub page related to this project at \url{https://gi
     }
     \end{minipage}
 }\\ \\
-The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.
+
 \subsubsection{Coding part}
 First thing first, we need to represent the \textit{circuit}; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the other following the structure represented in Figure \ref{circuit}.\\* Each gate that appears in figure \ref{circuit} is represented in a single JSON line.\\*
 The syntax is:\\ \\
