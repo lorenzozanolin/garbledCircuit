@@ -125,7 +125,7 @@ There is also a dedicated GitHub page related to this project at \url{https://gi
 The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.\\
 The \inlinecode{images} folder contains all images used in the report and documentation.\\
 The \inlinecode{circuits} folder contains the used circuit, in this case only \inlinecode{add.json}\\
-The \inlinecode{sets} folder contains the two files used to store sets of Alice and Bob.\\
+The \inlinecode{sets} folder contains the two files used to store sets of Alice and Bob.\\ \\
 \fbox{
     \begin{minipage}{40em}
     \dirtree{%
@@ -224,12 +224,14 @@ In this case the circuit is represented as follows:
             {"id":60,"type":"NOT","in":[58]},
             {"id":61,"type":"AND","in":[50,60]},
             {"id":62,"type":"OR","in":[59,61]}
-        ]}]}
+        ]
+       }
+     ]
+    }
     \end{lstlisting}
-We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour.
-It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file we can also find two functions \inlinecode{saveSet, readSet} used to write in two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt} the input values; this will be useful when we want to check the correctness of the computed result, using \inlinecode{verifyOperation}.\\
-Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \inlinecode{yao.py}, more precisely in the two functions \inlinecode{encrypt, decrypt}. As written in the code, we opted to prepend the IV at the cyphertext to avoid reusing the same IV for all the communications.\\
-We can represent the pseudocode that represents the behaviour listed before.\\
+We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour (illustrated below).
+It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file we can also find two functions \inlinecode{saveSet, readSet} used to write in two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt} the input values; this will be useful when we want to check the correctness of the computed result, using \inlinecode{verifyOperation}.\\ Since we are dealing with negative numbers, we decided to create two functions, \inlinecode{intToBin} and \inlinecode{binToInt} to convert numbers. Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \inlinecode{yao.py}, more precisely in the two functions \inlinecode{encrypt, decrypt}. As written in the code, we opted to prepend the IV at the cyphertext to avoid reusing the same IV for all the communications.\\
+We can represent the pseudocode that represents the behaviour (of the two parties) listed before.\\
 
 \begin{minipage}{0.46\textwidth}
     \begin{algorithm}[H]
@@ -239,13 +241,14 @@ We can represent the pseudocode that represents the behaviour listed before.\\
             \State $send(circuit)$  
             \State $aliceSet \gets askForInput()$ 
             \State $saveSet(aliceSet)$ 
+            \State $aliceSet \gets intToBin(aliceSet)$ 
             \State
             \State $aliceValue \gets sum(aliceSet)$
             \State $aliceE \gets encrypt(aliceValue)$
             \State
             \State $r \gets OT.getResult(aliceE,bKeys)$
             \State
-            \State $result = decimal(r)$
+            \State $result \gets binToInt(r)$
             \State $msg \gets verifyOperation(result)$ 
             \State $sendToBob(msg)$
             \State $printResult(result,msg)$
@@ -262,6 +265,7 @@ We can represent the pseudocode that represents the behaviour listed before.\\
             \State $receive(circuit)$  
             \State $bobSet \gets askForInput()$ 
             \State $saveSet(bobSet)$ 
+            \State $bobSet \gets intToBin(bobSet)$ 
             \State
             \State $bobValue \gets sum(bobSet)$
             \State
@@ -273,7 +277,7 @@ We can represent the pseudocode that represents the behaviour listed before.\\
         \end{algorithmic}
     \end{algorithm}
     \end{minipage}
-
+\clearpage
 \section{Usage}
 We will briefly explain how to install the program and how it works. In my \hyperref[zanoGit]{repo} there is also a graphical visualization of the executing program. 
 \subsection{Installation}
@@ -285,10 +289,11 @@ To run the program you need some packages:
     \item \textit{Bits} from bitstring, to do conversions from 2-complement to integers.
 \end{itemize}
 Simply run: 
-\inlinecode{\$ pip3 install pyzmq sympy cryptography bitstring}
+\inlinecode{\$ pip3 install bitstring pyzmq sympy cryptography bitstring}\\
+You can also find specific versions that I used in the file \inlinecode{requirements.txt}.
 \subsection{Execution}
 As already writte, there are two parties: Alice and Bob. You must run on two different terminals them. From now, for simplicity, we assume that we are positioned inside \inlinecode{/src/}.
-From Alice's Terminal, simply run \inlinecode{make alice}, while for Bob's Terminal run run \inlinecode{make bob}.\\
+From Alice's Terminal, simply run \inlinecode{make alice}, while for Bob's Terminal run run \inlinecode{make bob}. Note that in the \inlinecode{Makefile} I use python3 compiler.\\
 Now the connection will be established and the program will ask the user to give the input set, for each party. Once done, the result will be computed and printed in each terminal.
 \subsubsection{Example}
 A practical example will follow, we will show the output of each terminal.\\
