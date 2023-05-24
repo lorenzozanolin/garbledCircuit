@@ -58,30 +58,30 @@
 \maketitle
 
 \section{Introduction}
-The aim of this project is the study of Yao's protocol \cite{yao} and an useful application of it. More precisely, we will implement Secure multi-party computation; this field has the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private \cite{mpc}. In this project, the function we decided to implement is the \textit{8 bit sum}.
+The aim of this project is the study of Yao's protocol \cite{yao} and it's useful application. More precisely, we will implement secure multi-party computation; this field has the goal of creating methods for parties to jointly compute a function over their inputs while keeping those inputs private \cite{mpc}. In this project, the function we decided to implement is the \textit{8 bit sum}.
 
 \section{Analysis}
-We can focus on the sum computed by two parties, say Alice and Bob. The goal is to use \textit{MPC} to calulate the result while avoiding each member to know the others values; to do that we need an external component, called \textit{OT}.\\ This protocol allows two parties, Alice who
-knows x and Bob who knows y, to compute jointly the value of $f(x, y)$ in a way that does not reveal to each side more information than can be deduced from $f(x, y)$ \cite{ot}. As already written, $f$ is the 8-bit sum.\\ Both Alice and Bob have a set of integers and need to compute the sum of everything.
+We can focus on the sum computed by two parties, say Alice and Bob. The goal is to use \textit{MPC} to calculate the result while avoiding each member knowing the others values; to do that, we need an external component called \textit{OT}.\\ This protocol allows two parties, Alice who
+knows x and Bob who knows y, to jointly compute the value of $f(x, y)$ in a way that does not reveal to each side more information than can be deduced from $f(x, y)$ \cite{ot}. As already written, $f$ is the 8-bit sum.\\ Both Alice and Bob have a set of integers and need to compute the sum of everything.
 Two new roles are introduced: Alice is the \textit{garbler} and has the responsibility of creating the garbled circuit, while Bob is the \textit{evaluator}.
 They will behave as follows:
 \begin{enumerate}\label{behaviour}
-    \item Alice creates the garbled circuit and the tables and send them to Bob.
-    \item Alice select her set, via input.
-    \item Bob select his set, via input.
+    \item Alice creates the garbled circuit and the tables and sends them to Bob.
+    \item Alice selects her set, via input.
+    \item Bob selects his set, via input.
     \item Both interact with each other using OT.
-    \item Bob evaluate the function result and sends it to Alice.
+    \item Bob evaluates the function result and sends it to Alice.
     \item Alice checks the correctness of the result, and sends it to Bob (in clear).
 \end{enumerate}
 
 \section{Implementation}
 We will present how to implement the \textit{circuit} and how to make Alice and Bob comunicate securely.
 \subsection{Circuit}
-We will present briefly the 8-bit sum circuit. There are three basic components in this construction:
+We will briefly present the 8-bit sum circuit. There are three basic components in this construction:
 \begin{itemize}
     \item \textit{\hyperref[half]{Half Adder}}: used to sum the right-most digit;
-    \item \textit{\hyperref[full]{Full adder}}:  used to sum a generic digit in the number, ranging from position 1 to 8. It receives in input also carry of the previous sum.
-    \item \textit{\hyperref[overflow]{If then else}}: there could be situations, called \textit{overflow}, in which you sum two number with the same sign and obtain a number with opposite sign; to avoid this scenario, this construct is employed by examining the signs of the two numbers and the sign of the calculated result. If the two input numbers have the same sign, the output sign is set to be the same as the inputs. Instead, if the two input numbers have different signs, the sign of the result is determined accordingly to the previous circuit.  
+    \item \textit{\hyperref[full]{Full adder}}:  used to sum a generic digit in the number, ranging from position 1 to 8. It receives in input also a carry of the previous sum.
+    \item \textit{\hyperref[overflow]{If then else}}: there could be situations, called \textit{overflow}, in which you sum two numbers with the same sign and obtain a number with the opposite sign; to avoid this scenario, this construct is employed by examining the signs of the two numbers and the sign of the calculated result. If the two input numbers have the same sign, the output sign is set to be the same as the inputs. Instead, if the two input numbers have different signs, the sign of the result is determined according to the previous circuit.  
 \end{itemize}
 
 \begin{figure}[!htb]
@@ -109,20 +109,20 @@ We will present briefly the 8-bit sum circuit. There are three basic components 
 \footnote{\ref{half} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/1/14/Half-adder.svg} 
 \ref{full} was taken over \url{https://upload.wikimedia.org/wikipedia/commons/a/a9/Full-adder.svg}.}
 
-We then proceede creating the circuit by wiring 7 full adders, an half adder and the if-then-else together, as represented in Figure \ref{circuit}.
+We then proceeded to create the circuit by wiring seven full adders, a half adder and the if-then-else together, as represented in Figure \ref{circuit}.
 
 \begin{figure}[!h]
     %\centering
     \makebox[\textwidth][c]{
     \includegraphics[width=1.2\linewidth]{../src/images/Circuit.png}}
-    \caption{8-bit Adder}\label{circuit}
+    \caption{8-bit adder}\label{circuit}
 \end{figure}
-Since we are using 8 bit to represent the sum of each set, it immediatly follows that the sum of each set must be smaller than 256. In this case we are dealing with \textit{integers}, thus we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128,127]. The final sum has 9 bit representation, thus the result that we can obtain belongs to [-256,254]. 
+Since we are using 8 bits to represent the sum of each set, it immediately follows that the sum of each set must be smaller than 256. In this case, we are dealing with \textit{integers}, so we also need to consider negative numbers; to do that we are using \textit{2-complement}. In this case we are considering numbers that belong to [-128, 127]. The final sum has a 9 bits representation, thus the result that we can obtain belongs to [-256, 254]. 
 %\subsection{Implementation}
 \subsubsection{Project structure}
-The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
+The project will be developed using \textit{Python 3.9.10} and we will use functions provided in the GitHub repo: \url{https://github.com/ojroques/garbled-circuit}\label{ref:git}.\\
 There is also a dedicated GitHub page related to this project at \url{https://github.com/lorenzozanolin/garbledCircuit}\label{zanoGit}.\\ \\ The project has the following structure:\\ \\
-The \inlinecode{code} folder contains all the file that we will utilize for the secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from \hyperref[ref:git]{Ojroques repo}.\\
+The \inlinecode{code} folder contains all the files that we will utilize for secure communication. \inlinecode{ot.py, util.py, yao.py} are utilities taken from the \hyperref[ref:git]{Ojroques repo}.\\
 The \inlinecode{images} folder contains all images used in the report and documentation.\\
 The \inlinecode{circuits} folder contains the used circuit, in this case only \inlinecode{add.json}\\
 The \inlinecode{sets} folder contains the two files used to store sets of Alice and Bob.\\ \\
@@ -157,7 +157,7 @@ The \inlinecode{sets} folder contains the two files used to store sets of Alice 
 }\\ \\
 
 \subsubsection{Coding part}
-First thing first, we need to represent the \textit{circuit}; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the other following the structure represented in Figure \ref{circuit}.\\* Each gate that appears in figure \ref{circuit} is represented in a single JSON line.\\*
+First things first, we need to represent the \textit{circuit}; we decided to create the \inlinecode{add.json} file to code the circuit. Each wire is mapped to a number and linked with the others following the structure represented in Figure \ref{circuit}.\\* Each gate that appears in figure \ref{circuit} is represented by a single JSON line.\\*
 The syntax is:\\ \\
 \fbox{\inlinecode{"id" : <gateId>, "type" : "<TYPE>", "in": [<gateIdInput1>, <gateIdInput2>]}}\\ \\
 In this case the circuit is represented as follows:
@@ -229,9 +229,9 @@ In this case the circuit is represented as follows:
      ]
     }
     \end{lstlisting}
-We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behaviour (illustrated below).
-It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file we can also find two functions \inlinecode{saveSet, readSet} used to write in two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt} the input values; this will be useful when we want to check the correctness of the computed result, using \inlinecode{verifyOperation}.\\ Since we are dealing with negative numbers, we decided to create two functions, \inlinecode{intToBin} and \inlinecode{binToInt} to convert numbers. Since the communication is encrypted, we decided to use \textit{AES-CBC} as technique; we can see that in the file \inlinecode{yao.py}, more precisely in the two functions \inlinecode{encrypt, decrypt}. As written in the code, we opted to prepend the IV at the cyphertext to avoid reusing the same IV for all the communications.\\
-We can represent the pseudocode that represents the behaviour (of the two parties) listed before.\\
+We then created \inlinecode{class Alice, class Bob} in \inlinecode{main.py} to represent their behavior (illustrated below).
+It was decided that both parties have command line user interaction with the user, so we developed \inlinecode{askForInput} in \inlinecode{requirements.py}. In the same file, we can also find two functions, \inlinecode{saveSet, readSet} used to write the input values to two external files \inlinecode{sets/alice.txt} and \inlinecode{sets/bob.txt}; this will be useful when we want to check the correctness of the computed result using \inlinecode{verifyOperation}.\\ Since we are dealing with negative numbers, we decided to create two functions, \inlinecode{intToBin} and \inlinecode{binToInt} to convert numbers. Since the communication is encrypted, we decided to use \textit{AES-CBC} as a technique; we can see that in the file \inlinecode{yao.py}, more precisely in the two functions \inlinecode{encrypt, decrypt}. As written in the code, we opted to prepend the IV to the ciphertext to avoid reusing the same IV for all the communications.\\
+We can represent the pseudocode that represents the behavior (of the two parties) listed before.\\
 
 \begin{minipage}{0.46\textwidth}
     \begin{algorithm}[H]
@@ -279,9 +279,9 @@ We can represent the pseudocode that represents the behaviour (of the two partie
     \end{minipage}
 \clearpage
 \section{Usage}
-We will briefly explain how to install the program and how it works. In my \hyperref[zanoGit]{repo} there is also a graphical visualization of the executing program. 
+We will briefly explain how to install the program and how it works. In my \hyperref[zanoGit]{repo}, there is also a graphical visualization of the executing program. 
 \subsection{Installation}
-To run the program you need some packages:
+To run the program, you need some packages:
 \begin{itemize}
     \item \textit{ZeroMQ} used in \inlinecode{util.py} to implement communication;
     \item \textit{SymPy} to use prime numbers;
@@ -292,9 +292,9 @@ Simply run:
 \inlinecode{\$ pip3 install bitstring pyzmq sympy cryptography}\\
 You can also find specific versions that I used in the file \inlinecode{requirements.txt}.
 \subsection{Execution}
-As already writte, there are two parties: Alice and Bob. You must run on two different terminals them. From now, for simplicity, we assume that we are positioned inside \inlinecode{/src/}.
-From Alice's Terminal, simply run \inlinecode{make alice}, while for Bob's Terminal run run \inlinecode{make bob}. Note that in the \inlinecode{Makefile} I use python3 compiler.\\
-Now the connection will be established and the program will ask the user to give the input set, for each party. Once done, the result will be computed and printed in each terminal.
+As already written, there are two parties: Alice and Bob. You must run on two different terminals. For simplicity, we assume that we are positioned inside \inlinecode{/src/}.
+From Alice's Terminal, simply run \inlinecode{make alice}, while for Bob's Terminal run \inlinecode{make bob}. Note that in the \inlinecode{Makefile} I use python3 compiler.\\
+Now the connection will be established and the program will ask the user to give the input set, for each party. Once done, the result will be computed and printed on each terminal.
 \subsubsection{Example}
 A practical example will follow, we will show the output of each terminal.\\
 \textbf{Alice' side}:
@@ -330,8 +330,8 @@ Bob [16, 15, 14, 13, 12, 11, 10, 9] = 1 1 1 1 1 0 1 0
 
 The sum has been done correctly, result is -8.
 \end{lstlisting}
-\textit{Interpretation}: As already written in the output, the syntax is\\ \inlinecode{parties/result:  [list of bits] =   [correspective values]}. \vspace{2mm} \\
-The numbers on the left represent the bits in the circuit \inlinecode{add.json}, while the right ones represent the corrispective values. The last line is the output of the function \inlinecode{verifyOperation}.
+\textit{Interpretation}: As already written in the output, the syntax is\\ \inlinecode{parties/result:  [list of bits] =   [correlated values]}. \vspace{2mm} \\
+The numbers on the left represent the bits in the circuit \inlinecode{add.json}, while the right ones represent the respective values. The last line is the output of the function \inlinecode{verifyOperation}.
 
 
 \bibliography{thud}

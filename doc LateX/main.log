@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  24 MAY 2023 15:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.20)  24 MAY 2023 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,6 +615,11 @@ File: ts1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [7
 
 ]
+Overfull \hbox (20.03809pt too wide) in paragraph at lines 333--335
+\OT1/cmr/m/n/12 rep-re-sent the re-spec-tive val-ues. The last line is the out-
+put of the func-tion \OT1/cmtt/m/n/12 verifyOperation\OT1/cmr/m/n/12 . 
+ []
+
 (./main.bbl) [8] (./main.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -629,7 +634,7 @@ Here is how much of TeX's memory you used:
  30301 multiletter control sequences out of 15000+600000
  477434 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,63p,984b,1890s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 60i,8n,63p,987b,1890s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -645,7 +650,7 @@ ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texli
 ve/2022/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
 /2022/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
 022/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (8 pages, 495669 bytes).
+Output written on main.pdf (8 pages, 495656 bytes).
 PDF statistics:
  323 PDF objects out of 1000 (max. 8388607)
  275 compressed objects within 3 object streams
